@@ -5,6 +5,7 @@ import { useState } from "react";
 
 const services = [
   {
+    step: "01",
     title: "Book Your Appointment",
     lines: [
       "Schedule your consultation in just a few clicks.",
@@ -12,6 +13,7 @@ const services = [
     icon: "/icons-4.png",
   },
   {
+    step: "02",
     title: "Hair & Scalps Analysis",
     lines: [
       "Our specialist evaluates your hair condition and identifies the root cause.",
@@ -19,6 +21,7 @@ const services = [
     icon: "/icons-3.png",
   },
   {
+    step: "03",
     title: "Personalized Treatment Plan",
     lines: [
       "Receive the right treatment based on your hair condition.",
@@ -26,6 +29,7 @@ const services = [
     icon: "/icons-2.png",
   },
   {
+    step: "04",
     title: "Hair Regrowth & Follow-up",
     lines: [
       "Watch your hair become healthier, thicker, and stronger with follow-ups.",
@@ -64,24 +68,35 @@ function ArrowRightIcon() {
 
 function JourneyCard({ service }: { service: (typeof services)[number] }) {
   return (
-    <article className="animate-pop group flex flex-col items-center rounded-[8px] border border-white/10 bg-white/[0.06] px-5 py-7 text-center shadow-[0_18px_42px_rgb(0_0_0_/_18%)] backdrop-blur-md">
-      <div className="animate-slip-up animation-delay-100 mb-[34px] flex h-[128px] w-[128px] items-center justify-center rounded-full transition-colors duration-300 group-hover:bg-[#354f9f] max-sm:mb-[5px]">
+    <article className="animate-pop group relative flex flex-col items-center rounded-[14px] border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.02] px-6 py-9 text-center shadow-[0_18px_42px_rgb(0_0_0_/_25%)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-white/20">
+      {/* faint background numeral, editorial marker for a real sequential step */}
+      <span className="pointer-events-none absolute right-4 top-3 select-none font-serif text-[52px] font-bold leading-none text-white/[0.06]">
+        {service.step}
+      </span>
+
+      <div className="animate-slip-up animation-delay-100 relative z-10 mb-[30px] flex h-[120px] w-[120px] items-center justify-center rounded-full bg-[#364b9b] shadow-[0_0_0_6px_rgb(255_255_255_/_4%)] transition-colors duration-300 group-hover:bg-[#d92732] max-sm:mb-[8px]">
         <Image
           src={service.icon}
           alt={`${service.title} icon`}
           width={93}
           height={93}
-          className="h-24 w-24 object-contain brightness-0 invert transition duration-300"
+          className="h-[74px] w-[74px] object-contain brightness-0 invert transition duration-300"
         />
+        <span className="absolute -bottom-1 -right-1 flex h-9 w-9 items-center justify-center rounded-full border-[3px] border-[#070b16] bg-white text-[13px] font-extrabold text-[#364b9b] transition-colors duration-300 group-hover:text-[#d92732]">
+          {service.step}
+        </span>
       </div>
-      <h3 className="animate-slip-up animation-delay-200 text-[25px] font-bold leading-tight text-white">
+
+      <h3 className="animate-slip-up animation-delay-200 relative z-10 text-[23px] font-bold leading-tight tracking-tight text-white">
         {service.title}
       </h3>
-      <div className="animate-slip-up animation-delay-300 mt-[27px] space-y-[10px] text-[19px] leading-[1.25] text-white/75 max-sm:mt-[10px]">
+      <div className="animate-slip-up animation-delay-300 relative z-10 mt-[22px] space-y-[10px] text-[17px] leading-[1.4] text-white/65 max-sm:mt-[10px]">
         {service.lines.map((line) => (
           <p key={line}>{line}</p>
         ))}
       </div>
+
+      <span className="pointer-events-none absolute inset-x-8 bottom-0 h-px scale-x-0 bg-gradient-to-r from-transparent via-[#d92732] to-transparent transition-transform duration-300 group-hover:scale-x-100" />
     </article>
   );
 }
@@ -104,35 +119,66 @@ export default function WhatToExpect() {
 
   return (
     <section
-      className="relative scroll-mt-28 overflow-hidden bg-[#070b16] px-5 py-5 text-white sm:py-12 lg:py-[35px]"
+      className="relative scroll-mt-28 overflow-hidden bg-[#070b16] px-5 py-5 text-white sm:py-14 lg:py-[64px]"
       id="journey"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_14%_20%,rgb(53_79_159_/_32%),transparent_28%),radial-gradient(circle_at_86%_14%,rgb(241_50_61_/_22%),transparent_24%),linear-gradient(135deg,rgb(255_255_255_/_7%)_0_1px,transparent_1px_14px)]" />
+      {/* background image layer — swap the src below for your own asset in /public */}
+      <Image
+        src="/journey-bg.jpg"
+        alt=""
+        fill
+        priority={false}
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 object-cover opacity-40"
+      />
+      <div className="pointer-events-none absolute inset-0 bg-[#070b16]/60" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_14%_20%,rgb(54_75_155_/_34%),transparent_28%),radial-gradient(circle_at_86%_14%,rgb(217_39_50_/_20%),transparent_24%),linear-gradient(135deg,rgb(255_255_255_/_7%)_0_1px,transparent_1px_14px)]" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#070b16] to-transparent" />
 
       <div className="relative z-10 mx-auto max-w-[1280px] text-center">
-          <h2 className="animate-slip-up text-2xl font-extrabold leading-tight text-white sm:text-3xl lg:text-[44px]">
-            Process / Journey {" "}
-            <span className="text-[#f1323d]">Section</span>
-          </h2>
-        <p className="animate-slip-up animation-delay-100 mt-1 text-[19px] leading-7 text-white/72 sm:text-[21px]">
+        <span className="animate-slip-up inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.28em] text-[#d92732]">
+          <span className="h-px w-6 bg-[#d92732]" />
+          The Journey
+          <span className="h-px w-6 bg-[#d92732]" />
+        </span>
+
+        <h2 className="animate-slip-up animation-delay-100 mt-4 text-2xl font-extrabold leading-tight text-white sm:text-3xl lg:text-[44px]">
+          Process / Journey{" "}
+          <span className="text-[#364b9b]">Section</span>
+        </h2>
+        <p className="animate-slip-up animation-delay-200 mx-auto mt-3 max-w-xl text-[19px] leading-7 text-white/72 sm:text-[21px]">
           Your Hair Restoration Journey
         </p>
 
-        <div className="mt-[62px] max-sm:mt-[10px] sm:hidden">
+        {/* mobile carousel — single centered card, equal spacing both sides */}
+        <div className="mt-[50px] max-sm:mt-[18px] sm:hidden">
           <JourneyCard service={currentService} />
 
-          <div className="mt-10 max-sm:mt-5 flex items-center justify-center gap-5">
+          <div className="mt-8 flex items-center justify-center gap-6 max-sm:mt-5">
             <button
-              className="animate-slip-left animation-delay-400 flex h-11 w-11 items-center justify-center rounded-full bg-[#354f9f] text-white shadow-md transition-colors duration-200 hover:bg-[#f1323d]"
+              className="animate-slip-left animation-delay-400 flex h-11 w-11 items-center justify-center rounded-full bg-[#364b9b] text-white shadow-md transition-colors duration-200 hover:bg-[#d92732]"
               type="button"
               onClick={prevSlide}
               aria-label="Previous journey step"
             >
               <ArrowLeftIcon />
             </button>
+
+            <div className="flex items-center gap-2">
+              {services.map((service, index) => (
+                <span
+                  key={service.title}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    index === currentIndex
+                      ? "w-6 bg-[#d92732]"
+                      : "w-2 bg-white/25"
+                  }`}
+                />
+              ))}
+            </div>
+
             <button
-              className="animate-slip-right animation-delay-400 flex h-11 w-11 items-center justify-center rounded-full bg-[#354f9f] text-white shadow-md transition-colors duration-200 hover:bg-[#f1323d]"
+              className="animate-slip-right animation-delay-400 flex h-11 w-11 items-center justify-center rounded-full bg-[#364b9b] text-white shadow-md transition-colors duration-200 hover:bg-[#d92732]"
               type="button"
               onClick={nextSlide}
               aria-label="Next journey step"
@@ -142,7 +188,9 @@ export default function WhatToExpect() {
           </div>
         </div>
 
-        <div className="mt-[82px] max-sm:mt-[10px] hidden gap-y-14 sm:grid sm:grid-cols-2 sm:gap-x-10 lg:grid-cols-4 lg:gap-x-14">
+        {/* desktop grid — four equal columns joined by a centered connecting line */}
+        <div className="relative mt-[72px] hidden max-sm:mt-[10px] sm:grid sm:grid-cols-2 sm:gap-x-10 sm:gap-y-14 lg:grid-cols-4 lg:gap-x-8">
+          <span className="pointer-events-none absolute left-[12.5%] right-[12.5%] top-[104px] hidden h-px bg-gradient-to-r from-transparent via-white/15 to-transparent lg:block" />
           {services.map((service) => (
             <JourneyCard service={service} key={service.title} />
           ))}

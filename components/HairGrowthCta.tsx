@@ -19,9 +19,28 @@ function CheckIcon() {
   );
 }
 
+function ArrowIcon() {
+  return (
+    <svg
+      className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+      viewBox="0 0 16 16"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M2 8h11.5M8.5 2.5 14 8l-5.5 5.5"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      />
+    </svg>
+  );
+}
+
 function HairMark() {
   return (
-    <svg className="h-28 w-28 text-[#354f9f]/10" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+    <svg className="h-28 w-28 text-[#364b9b]/10" viewBox="0 0 120 120" fill="none" aria-hidden="true">
       <path
         d="M27 82c8-39 38-62 72-51-24 9-40 27-48 61"
         stroke="currentColor"
@@ -41,50 +60,102 @@ function HairMark() {
 export default function HairGrowthCta() {
   return (
     <section
-      className="relative scroll-mt-28 overflow-hidden bg-white px-5 py-8 text-[#0b1233] sm:px-8 lg:px-10 lg:py-20"
+      className="relative scroll-mt-28 overflow-hidden bg-white px-5 py-14 text-[#0b1233] sm:px-8 lg:px-10 lg:py-24"
       id="contact"
     >
+      {/* Ambient brand glow, consistent with the FAQ section */}
+      <div className="pointer-events-none absolute -right-24 -top-32 h-[420px] w-[420px] rounded-full bg-[#364b9b]/[0.06] blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-28 -left-16 h-[360px] w-[360px] rounded-full bg-[#d92732]/[0.05] blur-3xl" />
 
+      {/* Faint strand linework echoing the FAQ section's texture */}
+      <svg
+        className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.05]"
+        preserveAspectRatio="none"
+        viewBox="0 0 1200 800"
+      >
+        {Array.from({ length: 6 }).map((_, i) => (
+          <path
+            key={i}
+            d={`M ${1300 - i * 70} -50 C ${1050 - i * 70} 250, ${1150 - i * 70} 540, ${900 - i * 90} 850`}
+            stroke={i % 2 === 0 ? "#364b9b" : "#d92732"}
+            strokeWidth="1.5"
+            fill="none"
+          />
+        ))}
+      </svg>
 
-      <div className="relative z-10 mx-auto grid max-w-[1120px] items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="relative z-10 mx-auto grid max-w-[1120px] items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
         <div>
-          <span className="animate-slip-left inline-flex rounded-full border border-[#354f9f]/15 bg-[#354f9f]/8 px-5 py-2 text-[13px] font-bold uppercase tracking-[0.18em] text-[#354f9f]">
+          <span className="animate-slip-left inline-flex items-center gap-2 rounded-full border border-[#364b9b]/15 bg-[#364b9b]/[0.06] px-5 py-2 text-[13px] font-bold uppercase tracking-[0.18em] text-[#364b9b]">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#d92732]" />
             Hair O Graft
           </span>
 
-          <h1 className="animate-slip-left animation-delay-100 mt-5 max-sm:mt-2 max-w-[760px] text-[36px] font-extrabold leading-[1.12] text-[#0b1233] sm:text-[48px] lg:text-[48px]">
-            Stop Your Hair Loss. Start Your Hair Regrowth.
+          <h1 className="animate-slip-left animation-delay-100 mt-6 max-sm:mt-3 max-w-[760px] text-[36px] font-extrabold leading-[1.14] tracking-[-0.01em] text-[#0b1233] sm:text-[48px] lg:text-[52px]">
+            Stop Your Hair Loss.
+            <br />
+            Start Your{" "}
+            <span className="relative inline-block text-[#d92732]">
+              Hair Regrowth
+              <svg
+                className="absolute -bottom-2 left-0 w-full"
+                height="10"
+                viewBox="0 0 260 10"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M2 7 C 70 2, 190 2, 258 7"
+                  stroke="#d92732"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  fill="none"
+                />
+              </svg>
+            </span>
+            .
           </h1>
 
-          <p className="animate-slip-left animation-delay-200 mt-5 max-sm:mt-2 max-w-[680px] text-[18px] font-medium leading-8 text-[#5a6a82] sm:text-[20px]">
+          <p className="animate-slip-left animation-delay-200 mt-6 max-sm:mt-3 max-w-[620px] text-[18px] font-medium leading-8 text-[#5a6a82] sm:text-[20px]">
             Advanced Hair Growth, Hair Loss & Baldness Treatments Tailored Just
             for You
           </p>
 
           <a
-            className="animate-slip-up animation-delay-500 mt-8 inline-flex h-[54px] items-center justify-center rounded-full bg-[#354f9f] px-8 text-[16px] font-extrabold text-white transition-colors duration-200 hover:bg-[#d92732] max-sm:mt-4 max-sm:w-full max-sm:max-w-[360px] max-sm:px-4 max-sm:text-[14px] max-sm:whitespace-nowrap"
+            className="group animate-slip-up animation-delay-500 mt-9 inline-flex h-[56px] items-center justify-center gap-2.5 rounded-full bg-[#364b9b] px-8 text-[16px] font-extrabold text-white shadow-[0_16px_32px_-12px_rgb(54_75_155_/45%)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#d92732] hover:shadow-[0_16px_32px_-12px_rgb(217_39_50_/45%)] max-sm:mt-6 max-sm:w-full max-sm:max-w-[360px] max-sm:px-4 max-sm:text-[14px] max-sm:whitespace-nowrap"
             href="#"
           >
             Book Your Appointment Now
+            <ArrowIcon />
           </a>
         </div>
 
-        <div className="animate-slip-right rounded-[8px] border border-[#354f9f]/10 bg-[#f6f8ff] p-5 shadow-[0_22px_50px_rgb(20_41_86_/_10%)] sm:p-7">
-          <div className="grid gap-4">
-            {highlights.map((item, index) => (
-              <div
-                className="animate-slip-right flex items-center gap-3 rounded-[8px] border border-[#354f9f]/10 bg-white px-4 py-4"
-                style={{ animationDelay: `${260 + index * 90}ms` }}
-                key={item}
-              >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#354f9f] text-white">
-                  <CheckIcon />
-                </span>
-                <p className="text-[15px] font-bold leading-6 text-[#0b1233] sm:text-[16px]">
-                  {item}
-                </p>
-              </div>
-            ))}
+        <div className="animate-slip-right relative overflow-hidden rounded-[20px] border border-[#364b9b]/10 bg-[#f6f8ff] p-6 shadow-[0_28px_60px_-16px_rgb(20_41_86_/16%)] sm:p-8">
+
+          <p className="relative text-[12.5px] font-bold uppercase tracking-[0.16em] text-[#364b9b]/70">
+            Why Choose Us
+          </p>
+
+          <div className="relative mt-5 grid gap-3.5">
+            {highlights.map((item, index) => {
+              const accent = index % 2 === 0 ? "#364b9b" : "#d92732";
+              return (
+                <div
+                  className="animate-slip-right group flex items-center gap-4 rounded-[14px] border border-[#364b9b]/10 bg-white px-4 py-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-10px_rgb(20_41_86_/18%)]"
+                  style={{ animationDelay: `${260 + index * 90}ms` }}
+                  key={item}
+                >
+                  <span
+                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white transition-colors duration-200"
+                    style={{ backgroundColor: accent }}
+                  >
+                    <CheckIcon />
+                  </span>
+                  <p className="text-[15px] font-bold leading-6 text-[#0b1233] sm:text-[16px]">
+                    {item}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

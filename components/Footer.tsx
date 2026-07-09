@@ -1,15 +1,20 @@
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-[#070b16] px-5 py-6 text-white sm:px-8 lg:px-10">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_14%_20%,rgb(53_79_159_/_32%),transparent_28%),radial-gradient(circle_at_86%_14%,rgb(241_50_61_/_22%),transparent_24%),linear-gradient(135deg,rgb(255_255_255_/_7%)_0_1px,transparent_1px_14px)]" />
-      <div className="relative z-10 mx-auto flex max-w-[1005px] flex-col items-center max-sm:gap-2 gap-4 text-center text-[17px] font-medium text-white/82 sm:flex-row sm:justify-between sm:text-left">
+    <footer className="relative overflow-hidden bg-[#0b1233] px-5 py-7 text-white sm:px-8 lg:px-10">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#364b9b] to-[#d92732]" />
+
+      {/* Ambient brand glow, consistent with the rest of the site */}
+      <div className="pointer-events-none absolute -left-24 -top-24 h-[300px] w-[300px] rounded-full bg-[#364b9b]/20 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-28 -right-16 h-[280px] w-[280px] rounded-full bg-[#d92732]/[0.12] blur-3xl" />
+
+      <div className="relative z-10 mx-auto flex max-w-[1005px] flex-col items-center gap-3 text-center text-[14.5px] font-medium text-white/65 sm:flex-row sm:justify-between sm:gap-4 sm:text-left">
         <p>
           Copyright 2026{" "}
           <span className="font-extrabold text-white">Hair O Graft.</span>{" "}
           All rights reserved.
         </p>
         <a
-          className="font-extrabold text-[#7dd9ff] transition-colors duration-200 hover:text-[#f1323d]"
+          className="font-extrabold text-white/80 transition-colors duration-200 hover:text-[#d92732]"
           href="/privacy-policy"
         >
           Privacy Policy
