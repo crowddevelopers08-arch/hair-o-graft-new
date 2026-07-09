@@ -1,5 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
+import PageNavbar from "../../components/PageNavbar";
 
 const policySections = [
   {
@@ -34,25 +33,7 @@ export default function PrivacyPolicyPage() {
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_14%_18%,rgb(53_79_159_/_34%),transparent_30%),radial-gradient(circle_at_88%_12%,rgb(241_50_61_/_20%),transparent_24%),linear-gradient(135deg,rgb(255_255_255_/_7%)_0_1px,transparent_1px_16px)]" />
 
       <div className="relative z-10 mx-auto max-w-[980px]">
-        <header className="flex flex-col items-center justify-between gap-6 border-b border-white/10 pb-8 text-center sm:flex-row sm:text-left">
-          <Link href="/" className="inline-flex items-center">
-            <Image
-              src="/image.png"
-              alt="Hair O Graft"
-              width={170}
-              height={66}
-              className="h-auto w-[145px] sm:w-[170px]"
-              priority
-            />
-          </Link>
-
-          <Link
-            href="/"
-            className="inline-flex h-11 items-center justify-center rounded-full bg-white/10 px-6 text-[14px] font-extrabold text-white transition-colors duration-200 hover:bg-[#354f9f]"
-          >
-            Back To Home
-          </Link>
-        </header>
+        <PageNavbar />
 
         <section className="py-12 sm:py-16">
           <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#7dd9ff]">

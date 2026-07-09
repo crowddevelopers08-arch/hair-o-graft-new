@@ -62,7 +62,7 @@ export default function HairGrowthCta() {
           </p>
 
           <a
-            className="animate-slip-up animation-delay-500 max-sm:mt-4 mt-8 inline-flex h-[54px] items-center justify-center rounded-full bg-[#354f9f] px-8 text-[16px] font-extrabold text-white transition-colors duration-200 hover:bg-[#d92732]"
+            className="animate-slip-up animation-delay-500 mt-8 inline-flex h-[54px] items-center justify-center rounded-full bg-[#354f9f] px-8 text-[16px] font-extrabold text-white transition-colors duration-200 hover:bg-[#d92732] max-sm:mt-4 max-sm:w-full max-sm:max-w-[360px] max-sm:px-4 max-sm:text-[14px] max-sm:whitespace-nowrap"
             href="#"
           >
             Book Your Appointment Now

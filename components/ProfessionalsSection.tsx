@@ -82,20 +82,20 @@ export default function ProfessionalsSection() {
             unique hair condition.
           </p>
 
-          <div className="animate-slip-up animation-delay-300 relative mx-auto max-sm:mt-4 mt-8 min-h-[430px] w-full max-w-[420px] lg:hidden">
-            <div className="absolute right-0 top-0 h-[360px] w-[82%] overflow-hidden rounded-[42px] bg-[#f6f8ff]">
+          <div className="animate-slip-up animation-delay-300 relative mx-auto mt-6 min-h-[510px] w-full max-w-[420px] sm:min-h-[560px] lg:hidden">
+            <div className="absolute right-0 top-3 h-[461px] w-[84%] overflow-hidden rounded-[34px] bg-[#f6f8ff] sm:h-[400px] sm:rounded-[42px]">
               <Image
-                src="/doctors.jpeg"
+                src="/surgery_gfc.png"
                 alt="Dr. E. Hema Shree hair specialist caring for patient"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 sizes="82vw"
                 priority
               />
             </div>
 
-            <div className="absolute left-0 top-8 w-[54%] min-w-[205px] overflow-hidden rounded-[28px] border-[7px] border-white bg-[#0b1233] shadow-[0_18px_40px_rgb(11_18_51_/_18%)]">
-              <div className="relative h-[205px]">
+            <div className="absolute left-0 top-0 w-[58%] min-w-[190px] overflow-hidden rounded-[26px] border-[6px] border-white bg-[#0b1233] shadow-[0_18px_40px_rgb(11_18_51_/_18%)] sm:min-w-[215px] sm:rounded-[28px] sm:border-[7px]">
+              <div className="relative h-[190px] sm:h-[215px]">
                 <Image
                   src="/doctors.jpeg"
                   alt="Professional hair consultation video support"
@@ -104,21 +104,21 @@ export default function ProfessionalsSection() {
                   sizes="220px"
                 />
               </div>
-              <div className="bg-[#0b1233] py-3 text-center text-[13px] font-extrabold leading-none text-white">
+              <div className="bg-[#0b1233] py-3 text-center text-[12px] font-extrabold leading-none text-white sm:text-[13px]">
                 DR. E. HEMA SHREE
               </div>
             </div>
 
-            <div className="animate-pop animation-delay-500 absolute bottom-0 right-0 w-[245px] rounded-2xl bg-[#354f9f] px-5 py-5 text-white shadow-[0_18px_36px_rgb(53_79_159_/_25%)]">
-              <div className="absolute -right-4 -top-6 flex h-[66px] w-[66px] items-center justify-center rounded-full border-[4px] border-white bg-[#0b1233]">
+            <div className="animate-pop animation-delay-500 absolute bottom-2 right-0 w-[78%] max-w-[300px] rounded-2xl bg-[#354f9f] px-5 py-5 text-white shadow-[0_18px_36px_rgb(53_79_159_/_25%)]">
+              <div className="absolute -right-3 -top-5 flex h-[62px] w-[62px] items-center justify-center rounded-full border-[4px] border-white bg-[#0b1233]">
                 <span className="text-[20px] font-extrabold leading-none text-white">
                   5+
                 </span>
               </div>
-              <h3 className="text-[18px] font-extrabold leading-tight">
+              <h3 className="pr-9 text-[18px] font-extrabold leading-tight">
                 Years Experience
               </h3>
-              <p className="mt-4 text-[13px] font-semibold leading-6 text-white/90">
+              <p className="mt-3 text-[13px] font-semibold leading-6 text-white/90">
                 Clinical experience in advanced hair restoration and
                 cosmetology care.
               </p>

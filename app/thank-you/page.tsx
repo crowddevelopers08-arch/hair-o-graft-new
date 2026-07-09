@@ -1,23 +1,13 @@
-import Image from "next/image";
 import Link from "next/link";
+import PageNavbar from "../../components/PageNavbar";
 
 export default function ThankYouPage() {
   return (
     <main className="min-h-screen bg-[#070b16] px-5 py-10 text-white sm:px-8 lg:px-10">
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_18%_16%,rgb(53_79_159_/_36%),transparent_30%),radial-gradient(circle_at_82%_20%,rgb(241_50_61_/_20%),transparent_26%),linear-gradient(135deg,rgb(255_255_255_/_7%)_0_1px,transparent_1px_16px)]" />
+      <PageNavbar />
 
-      <section className="relative z-10 mx-auto flex min-h-[calc(100vh-80px)] max-w-[920px] flex-col items-center justify-center text-center">
-        <Link href="/" className="mb-9 inline-flex items-center">
-          <Image
-            src="/image.png"
-            alt="Hair O Graft"
-            width={180}
-            height={70}
-            className="h-auto w-[150px] sm:w-[180px]"
-            priority
-          />
-        </Link>
-
+      <section className="relative z-10 mx-auto flex min-h-[calc(100vh-150px)] max-w-[920px] flex-col items-center justify-center py-12 text-center">
         <div className="mb-7 flex h-20 w-20 items-center justify-center rounded-full bg-[#354f9f] shadow-[0_18px_45px_rgb(53_79_159_/_35%)]">
           <svg
             className="h-10 w-10 text-white"
