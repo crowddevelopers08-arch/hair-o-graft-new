@@ -39,7 +39,7 @@ function ArrowRightIcon() {
 /** Certificate-style corner brackets — reused on both panels, tinted to
  *  each panel's assigned brand color. Reads as "verified / certified",
  *  which fits a clinic that leads with credentials. */
-function CornerBrackets({ color }) {
+function CornerBrackets({ color }: { color: "red" | "blue" }) {
   const c = color === "red" ? "#D92732" : "#364B9B";
   return (
     <>
