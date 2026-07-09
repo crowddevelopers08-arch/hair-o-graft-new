@@ -119,17 +119,23 @@ function HairCapsule() {
 
 export default function AboutHealthcare() {
   return (
-    <section className="relative overflow-hidden bg-white px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
+    <section
+      className="relative scroll-mt-28 overflow-hidden bg-[#070b16] px-5 py-8 text-white sm:px-8 lg:px-10 lg:py-24"
+      id="about"
+    >
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_14%_20%,rgb(53_79_159_/_32%),transparent_28%),radial-gradient(circle_at_86%_14%,rgb(241_50_61_/_22%),transparent_24%),linear-gradient(135deg,rgb(255_255_255_/_7%)_0_1px,transparent_1px_14px)]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#070b16] to-transparent" />
+
       <div className="absolute right-8 top-6 hidden rotate-12 lg:block">
         <HairCapsule />
       </div>
 
-      <div className="mx-auto grid max-w-[1460px] items-center gap-14 lg:grid-cols-[0.93fr_1fr] xl:gap-20">
-        <div className="animate-slip-left relative mx-auto w-full max-w-[620px] lg:mx-0">
-          <div className="absolute -left-7 -top-7 h-[92%] w-[34%] rounded-2xl bg-[#e8ecfa]" />
-          <div className="relative overflow-hidden rounded-2xl bg-[#f6f8ff] shadow-sm">
+      <div className="relative z-10 mx-auto grid max-w-[1460px] items-center gap-14 lg:grid-cols-[0.93fr_1fr] xl:gap-20">
+        <div className="animate-slip-left relative mx-auto hidden w-full max-w-[620px] lg:mx-0 lg:block">
+          <div className="absolute -left-7 -top-7 h-[92%] w-[34%] rounded-2xl bg-white/10" />
+          <div className="relative overflow-hidden rounded-2xl bg-white/[0.06] shadow-[0_22px_50px_rgb(0_0_0_/_24%)]">
             <Image
-              src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=920&q=85"
+              src="/surgery_fue.png"
               alt="Smiling healthcare specialist"
               width={920}
               height={930}
@@ -138,7 +144,7 @@ export default function AboutHealthcare() {
             />
           </div>
 
-          <div className="animate-pop animation-delay-400 absolute bottom-5 right-5 flex w-[260px] items-center gap-4 rounded-2xl bg-white px-7 py-5 shadow-[0_16px_36px_rgb(20_41_86_/_12%)] sm:bottom-8 sm:right-8 sm:w-[305px]">
+          <div className="animate-pop animation-delay-400 absolute bottom-5 right-5 flex w-[260px] items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.92] px-7 py-5 shadow-[0_16px_36px_rgb(0_0_0_/_24%)] backdrop-blur-md sm:bottom-8 sm:right-8 sm:w-[305px]">
             <div className="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-full border-2 border-[#f1323d] text-[#f1323d]">
               <ClockIcon />
             </div>
@@ -154,23 +160,51 @@ export default function AboutHealthcare() {
         </div>
 
         <div className="relative">
-          <div className="absolute -left-16 top-1 hidden h-9 w-9 rounded-full border border-[#354f9f] lg:block" />
-          <div className="animate-slip-right mb-6 inline-flex items-center gap-2 rounded-full border border-[#d5d9e5] bg-white px-5 py-2 text-[15px] font-semibold text-[#2b2b2b]">
+          <div className="absolute -left-16 top-1 hidden h-9 w-9 rounded-full border border-[#7dd9ff] lg:block" />
+          <div className="animate-slip-right mb-6 max-sm:mb-2 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-5 py-2 text-[15px] font-semibold text-[#7dd9ff]">
             <span className="h-2 w-2 rounded-full bg-[#f1323d]" />
             Clinic Section
           </div>
 
-          <h2 className="animate-slip-right animation-delay-100 max-w-[720px] text-[36px] font-extrabold leading-[1.22] text-[#354f9f] sm:text-[44px] lg:text-[48px]">
+          <h2 className="animate-slip-right animation-delay-100 max-w-[720px] text-[36px] font-extrabold leading-[1.22] text-white sm:text-[44px] lg:text-[48px]">
             Why Choose Hair O Graft?
           </h2>
 
-          <p className="animate-slip-right animation-delay-200 mt-5 max-w-[660px] text-[18px] font-medium leading-8 text-[#8c94b0]">
+          <p className="animate-slip-right animation-delay-200 mt-5 max-sm:mt-1 max-w-[660px] text-[18px] font-medium leading-8 text-white/75">
             Chennai&apos;s Trusted Hair Restoration Clinic. At Hair O Graft, we
             focus on treating the root cause of hair loss, not just masking the
             symptoms. Using advanced medical technology and evidence-based
             treatments, we create personalized solutions that help restore
             natural hair growth safely and effectively.
           </p>
+
+          <div className="animate-slip-up animation-delay-300 relative mx-auto mt-8 w-full max-w-[620px] lg:hidden">
+            <div className="absolute -left-4 -top-4 h-[92%] w-[34%] rounded-2xl bg-white/10" />
+            <div className="relative overflow-hidden rounded-2xl bg-white/[0.06] shadow-[0_22px_50px_rgb(0_0_0_/_24%)]">
+              <Image
+                src="/surgery_fue.png"
+                alt="Smiling healthcare specialist"
+                width={920}
+                height={930}
+                className="h-[360px] w-full object-cover object-center sm:h-[520px]"
+                priority
+              />
+            </div>
+
+            <div className="animate-pop animation-delay-400 absolute bottom-5 right-5 flex w-[260px] items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.92] px-7 py-5 shadow-[0_16px_36px_rgb(0_0_0_/_24%)] backdrop-blur-md sm:bottom-8 sm:right-8 sm:w-[305px]">
+              <div className="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-full border-2 border-[#f1323d] text-[#f1323d]">
+                <ClockIcon />
+              </div>
+              <div>
+                <p className="text-[18px] font-extrabold leading-tight text-[#2b2b2b]">
+                  24/7 availability
+                </p>
+                <p className="mt-1 text-[15px] font-medium text-[#8c94b0]">
+                  For your peace of mind
+                </p>
+              </div>
+            </div>
+          </div>
 
           <div className="animate-slip-up animation-delay-300 relative mt-8 max-w-[740px]">
             <div className="absolute right-8 top-[-18px] hidden opacity-80 sm:block">
@@ -180,7 +214,7 @@ export default function AboutHealthcare() {
             <ul className="relative z-10 flex flex-wrap gap-y-5">
               {clinicPoints.map((point) => (
                 <li
-                  className="flex w-full items-center gap-3 pr-4 text-[16px] font-semibold leading-6 text-[#2b2b2b]/70 sm:w-1/2"
+                  className="flex w-full items-center gap-3 pr-4 text-[16px] font-semibold leading-6 text-white/82 sm:w-1/2"
                   key={point}
                 >
                   <PlusIcon />
@@ -190,23 +224,23 @@ export default function AboutHealthcare() {
             </ul>
           </div>
 
-          <div className="mt-9 h-px max-w-[740px] bg-[#e3e5ee]" />
+          <div className="mt-9 h-px max-w-[740px] bg-white/12" />
 
           <div className="animate-slip-up animation-delay-500 mt-8 flex max-w-[740px] flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-5">
               <div className="relative h-[58px] w-[58px] overflow-hidden rounded-full bg-[#f6d6cd]">
                 <Image
-                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=180&q=80"
+                  src="/doctors.jpeg"
                   alt="Michael Jordan"
                   fill
                   className="object-cover"
                 />
               </div>
               <div>
-                <p className="text-[22px] font-extrabold leading-tight text-[#2b2b2b]">
+                <p className="text-[22px] font-extrabold leading-tight text-white">
                   Dr. E. Hema Shree
                 </p>
-                <p className="mt-1 text-[16px] font-medium text-[#8c94b0]">
+                <p className="mt-1 text-[16px] font-medium text-white/65">
                   BDS | FMC
                 </p>
               </div>
@@ -215,7 +249,7 @@ export default function AboutHealthcare() {
             <div className="flex items-center gap-10">
 
               <a
-                className="inline-flex h-[54px] min-w-[178px] items-center justify-between rounded-full border border-[#354f9f] bg-white pl-8 pr-2 text-[16px] font-semibold text-[#354f9f] transition-colors duration-200 hover:border-[#f1323d]"
+                className="inline-flex h-[54px] min-w-[178px] items-center justify-between rounded-full border border-white/15 bg-white/8 pl-8 pr-2 text-[16px] font-semibold text-white transition-colors duration-200 hover:border-[#f1323d] hover:bg-white/12"
                 href="#"
               >
                 Learn More

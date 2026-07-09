@@ -133,7 +133,10 @@ export default function BeforeAfter() {
   });
 
   return (
-    <section className="w-full bg-white px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+    <section
+      className="w-full scroll-mt-28 bg-white px-4 py-8 sm:px-6 sm:py-12 lg:px-8"
+      id="results"
+    >
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-sm:mb-4 mb-8 max-w-3xl text-center sm:mb-10">
           <span className="animate-slip-up mb-3 inline-flex items-center gap-2 rounded-full bg-[#354f9f]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#354f9f]">
