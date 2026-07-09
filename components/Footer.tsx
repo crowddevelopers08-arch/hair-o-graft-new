@@ -10,7 +10,7 @@ export default function Footer() {
         </p>
         <a
           className="font-extrabold text-[#7dd9ff] transition-colors duration-200 hover:text-[#f1323d]"
-          href="#"
+          href="/privacy-policy"
         >
           Privacy Policy
         </a>
