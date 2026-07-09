@@ -57,7 +57,7 @@ function QuoteIcon() {
 export default function ProfessionalsSection() {
   return (
     <section
-      className="relative scroll-mt-28 overflow-hidden bg-white px-5 py-16 max-sm:px-4 max-sm:py-10 sm:px-8 lg:px-10 lg:py-24"
+      className="relative scroll-mt-28 overflow-hidden bg-white px-5 py-8 max-sm:px-4 max-sm:py-10 sm:px-5 lg:px-10 lg:py-8"
       id="doctors"
     >
       {/* Ambient brand glow, consistent with the CTA section */}
@@ -207,7 +207,7 @@ export default function ProfessionalsSection() {
 
             <a
               className="animate-slip-up animation-delay-600 group max-sm:mt-5 mt-8 inline-flex h-[52px] items-center justify-center gap-2 rounded-full bg-[#364b9b] px-8 text-[16px] font-bold text-white transition-colors duration-200 hover:bg-[#d92732]"
-              href="#"
+              href="#lead-form"
             >
               Book Appointment
               <ArrowRightIcon />

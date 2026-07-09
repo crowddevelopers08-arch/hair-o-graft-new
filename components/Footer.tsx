@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[#0b1233] px-5 py-7 text-white sm:px-8 lg:px-10">
+    <footer className="relative overflow-hidden bg-[#0b1233] px-5 py-7 text-white sm:px-8 lg:px-10 max-sm:mb-10">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#364b9b] to-[#d92732]" />
 
       {/* Ambient brand glow, consistent with the rest of the site */}

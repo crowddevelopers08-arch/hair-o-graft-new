@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState, type FormEvent } from "react";
 
 const navItems = [
   { label: "Home", href: "#home", hasChevron: true, active: true },
@@ -175,8 +176,44 @@ const beforeAfterImages = [
 ];
 
 export default function ClinicHeroTemplate() {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [beforeAfterIndex, setBeforeAfterIndex] = useState(0);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    try {
+      const res = await fetch("/api/submissions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          source: "Hero Form",
+          name: formData.get("name"),
+          phone: formData.get("phone"),
+          email: formData.get("email"),
+          concern: formData.get("concern"),
+          pageUrl: window.location.href,
+        }),
+      });
+
+      const data = await res.json();
+      if (!res.ok || !data.success) throw new Error(data.error || "Submission failed");
+
+      form.reset();
+      router.push("/thank-you");
+    } catch {
+      setSubmitStatus("error");
+      setIsSubmitting(false);
+    }
+  }
 
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -259,7 +296,7 @@ export default function ClinicHeroTemplate() {
 
           <div className="flex items-center gap-3">
             <a
-              href="#contact"
+              href="#lead-form"
               className="hidden h-11 items-center justify-center rounded-full bg-gradient-to-r from-[#354f9f] to-[#4a63b8] px-6 text-[14px] font-bold text-white shadow-md shadow-[#354f9f]/25 transition-transform hover:-translate-y-0.5 lg:inline-flex"
             >
               Book Appointment
@@ -429,7 +466,7 @@ export default function ClinicHeroTemplate() {
               </div>
 
               {/* Right: lead capture form */}
-              <div className="flex w-full max-w-md flex-col justify-self-right rounded-[28px] border border-black/5 bg-white p-6 shadow-2xl sm:p-7 lg:max-w-none lg:justify-self-stretch lg:p-9">
+              <div id="lead-form" className="flex w-full max-w-md flex-col justify-self-right rounded-[28px] border border-black/5 bg-white p-6 shadow-2xl sm:p-7 lg:max-w-none lg:justify-self-stretch lg:p-9">
                 <div className="flex items-center gap-3">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#354f9f]/10 text-[#354f9f]">
                     <StethoscopeIcon />
@@ -444,10 +481,7 @@ export default function ClinicHeroTemplate() {
                   </div>
                 </div>
 
-                <form
-                  className="mt-5 flex flex-col gap-3.5"
-                  onSubmit={(event) => event.preventDefault()}
-                >
+                <form className="mt-5 flex flex-col gap-3.5" onSubmit={handleSubmit}>
                   <div className="relative">
                     <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[#1c2437]/40">
                       <UserIcon />
@@ -513,10 +547,17 @@ export default function ClinicHeroTemplate() {
 
                   <button
                     type="submit"
-                    className="mt-2 inline-flex h-12 w-full items-center justify-center rounded-full bg-gradient-to-r from-[#354f9f] to-[#4a63b8] text-sm font-bold text-white shadow-md shadow-[#354f9f]/25 transition-transform hover:-translate-y-0.5"
+                    disabled={isSubmitting}
+                    className="mt-2 inline-flex h-12 w-full items-center justify-center rounded-full bg-gradient-to-r from-[#354f9f] to-[#4a63b8] text-sm font-bold text-white shadow-md shadow-[#354f9f]/25 transition-transform hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0"
                   >
-                    Get Free Consultation
+                    {isSubmitting ? "Sending..." : "Get Free Consultation"}
                   </button>
+
+                  {submitStatus === "error" && (
+                    <p className="text-center text-xs font-semibold text-[#f1323d]">
+                      Something went wrong. Please try again.
+                    </p>
+                  )}
 
                   <p className="text-center text-xs text-[#1c2437]/45">
                     Your information is safe with us. No spam, ever.

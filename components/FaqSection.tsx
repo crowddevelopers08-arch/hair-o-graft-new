@@ -62,7 +62,7 @@ function ToggleIcon() {
 export default function FaqSection() {
   return (
     <section
-      className="relative scroll-mt-28 overflow-hidden bg-[#f7f8fc] px-5 py-8 sm:px-8 lg:px-10 lg:py-28"
+      className="relative scroll-mt-28 overflow-hidden bg-[#f7f8fc] px-5 py-5 sm:px-8 lg:px-10 lg:py-8"
       id="faq"
     >
       {/* Ambient brand glow */}

@@ -60,7 +60,7 @@ function HairMark() {
 export default function HairGrowthCta() {
   return (
     <section
-      className="relative scroll-mt-28 overflow-hidden bg-white px-5 py-14 text-[#0b1233] sm:px-8 lg:px-10 lg:py-24"
+      className="relative scroll-mt-28 overflow-hidden bg-white px-5 py-5 text-[#0b1233] sm:px-8 lg:px-10 lg:py-8"
       id="contact"
     >
       {/* Ambient brand glow, consistent with the FAQ section */}
@@ -122,7 +122,7 @@ export default function HairGrowthCta() {
 
           <a
             className="group animate-slip-up animation-delay-500 mt-9 inline-flex h-[56px] items-center justify-center gap-2.5 rounded-full bg-[#364b9b] px-8 text-[16px] font-extrabold text-white shadow-[0_16px_32px_-12px_rgb(54_75_155_/45%)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#d92732] hover:shadow-[0_16px_32px_-12px_rgb(217_39_50_/45%)] max-sm:mt-6 max-sm:w-full max-sm:max-w-[360px] max-sm:px-4 max-sm:text-[14px] max-sm:whitespace-nowrap"
-            href="#"
+            href="#lead-form"
           >
             Book Your Appointment Now
             <ArrowIcon />

@@ -177,8 +177,8 @@ export default function AboutHealthcare() {
                 </div>
 
                 <a
+                  href="#lead-form"
                   className="group inline-flex h-[50px] min-w-[164px] items-center justify-between rounded-full bg-[#D92732] pl-6 pr-2 text-[15px] font-semibold text-white transition-transform duration-300 hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                  href="#"
                 >
                   Learn More
                   <span className="ml-4 flex h-9 w-9 items-center justify-center rounded-full bg-[#0D1330] text-white transition-transform duration-300 group-hover:translate-x-0.5">

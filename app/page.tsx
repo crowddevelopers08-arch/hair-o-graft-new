@@ -5,6 +5,7 @@ import ClinicHeroTemplate from "../components/ClinicHeroTemplate";
 import FaqSection from "../components/FaqSection";
 import Footer from "../components/Footer";
 import HairGrowthCta from "../components/HairGrowthCta";
+import MobileActionBar from "../components/MobileActionBar";
 import ProfessionalsSection from "../components/ProfessionalsSection";
 import ScrollAnimations from "../components/ScrollAnimations";
 import WhatToExpect from "../components/WhatToExpect";
@@ -22,6 +23,7 @@ export default function Home() {
       <FaqSection />
       <HairGrowthCta />
       <Footer />
+      <MobileActionBar />
     </main>
   );
 }

@@ -48,7 +48,7 @@ export default function ThankYouPage() {
             Back To Home
           </Link>
           <Link
-            href="/#contact"
+            href="/#lead-form"
             className="inline-flex h-12 items-center justify-center rounded-full border border-white/18 bg-white/10 px-7 text-[15px] font-extrabold text-white transition-colors duration-200 hover:bg-white/18"
           >
             Book Again
