@@ -226,39 +226,6 @@ export default function ClinicHeroTemplate() {
   return (
     <div className="relative w-full bg-white" id="home">
       {/* Top info bar */}
-      <div className="hidden w-full bg-[#354f9f] text-white lg:block">
-        <div className="mx-auto flex max-w-[1400px] items-center justify-between px-8 py-2.5 text-[13px] font-medium xl:px-12">
-          <div className="flex items-center gap-5">
-            <span className="flex items-center gap-2">
-              <ClockIcon />
-              <span className="font-semibold">Working Hour:</span> 08:00am to 09:00pm
-            </span>
-            <span className="h-4 w-px bg-white/25" />
-            <span className="flex items-center gap-2">
-              <MailIcon />
-              <span className="font-semibold">Email:</span> info@hairograft.com
-            </span>
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-3">
-              <a href="#" aria-label="Instagram" className="transition-colors hover:text-[#f6dc24]">
-                <InstagramIcon />
-              </a>
-              <a href="#" aria-label="Facebook" className="transition-colors hover:text-[#f6dc24]">
-                <FacebookIcon />
-              </a>
-              <a href="#" aria-label="Dribbble" className="transition-colors hover:text-[#f6dc24]">
-                <DribbbleIcon />
-              </a>
-            </div>
-            <span className="h-4 w-px bg-white/25" />
-            <span className="flex items-center gap-2">
-              <PhoneIcon />
-              <span className="font-semibold">Contact:</span> +91 7448866675
-            </span>
-          </div>
-        </div>
-      </div>
 
       {/* Navbar */}
       <header className="sticky top-0 z-50 w-full border-b border-black/5 bg-white shadow-[0_1px_0_rgb(0_0_0_/_4%)]">
@@ -272,7 +239,7 @@ export default function ClinicHeroTemplate() {
               className="h-11 w-11 rounded-full border-2 border-[#354f9f] bg-white object-contain"
               priority
             />
-            <span className="text-xl font-extrabold leading-none text-[#1c2437] sm:text-2xl">
+            <span className="text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] font-extrabold leading-none text-[#1c2437]">
               Hair O Graft
             </span>
           </a>
@@ -282,7 +249,7 @@ export default function ClinicHeroTemplate() {
               <a
                 key={item.label}
                 href={item.href}
-                className={`flex items-center gap-1 text-[15px] font-semibold transition-colors ${
+                className={`flex items-center gap-1 text-[14px] lg:text-[16px] font-semibold transition-colors ${
                   item.active
                     ? "text-[#354f9f]"
                     : "text-[#1c2437]/80 hover:text-[#354f9f]"
@@ -297,7 +264,7 @@ export default function ClinicHeroTemplate() {
           <div className="flex items-center gap-3">
             <a
               href="#lead-form"
-              className="hidden h-11 items-center justify-center rounded-full bg-gradient-to-r from-[#354f9f] to-[#4a63b8] px-6 text-[14px] font-bold text-white shadow-md shadow-[#354f9f]/25 transition-transform hover:-translate-y-0.5 lg:inline-flex"
+              className="hidden h-11 items-center justify-center rounded-full bg-gradient-to-r from-[#354f9f] to-[#4a63b8] px-6 text-[14px] lg:text-[16px] font-bold text-white shadow-md shadow-[#354f9f]/25 transition-transform hover:-translate-y-0.5 lg:inline-flex"
             >
               Book Appointment
             </a>
@@ -327,7 +294,7 @@ export default function ClinicHeroTemplate() {
                 key={item.label}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className={`rounded-md px-2 py-2 text-[15px] font-semibold ${
+                className={`rounded-md px-2 py-2 text-[14px] lg:text-[16px] font-semibold ${
                   item.active ? "text-[#354f9f]" : "text-[#1c2437]/80"
                 }`}
               >
@@ -337,12 +304,12 @@ export default function ClinicHeroTemplate() {
             <a
               href="#contact"
               onClick={() => setIsOpen(false)}
-              className="mt-2 inline-flex h-11 items-center justify-center rounded-full bg-gradient-to-r from-[#354f9f] to-[#4a63b8] px-6 text-[14px] font-bold text-white"
+              className="mt-2 inline-flex h-11 items-center justify-center rounded-full bg-gradient-to-r from-[#354f9f] to-[#4a63b8] px-6 text-[14px] lg:text-[16px] font-bold text-white"
             >
               Book Appointment
             </a>
 
-            <div className="mt-3 flex flex-col gap-2 border-t border-black/5 pt-3 text-[13px] font-medium text-[#1c2437]/80">
+            <div className="mt-3 flex flex-col gap-2 border-t border-black/5 pt-3 text-[12px] md:text-[13px] lg:text-[14px] font-medium text-[#1c2437]/80">
               <span className="flex items-center gap-2">
                 <ClockIcon />
                 08:00am to 09:00pm
@@ -376,13 +343,31 @@ export default function ClinicHeroTemplate() {
             <div className="relative z-10 mx-auto grid h-full max-w-[1200px] grid-cols-1 items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-2 lg:items-center lg:gap-14 lg:px-10 lg:py-14">
               {/* Left: banner content */}
               <div className="flex w-full flex-col items-center text-center lg:items-start lg:text-left">
-                <span className="mb-4 inline-flex items-center gap-2 text-[13px] font-semibold text-white/90 sm:mb-5 sm:text-[15px]">
+                <span className="mb-4 inline-flex items-center gap-2 text-[12px] md:text-[13px] lg:text-[14px] font-semibold text-white/90 sm:mb-5">
                   <StethoscopeIcon />
                   Your Hair Our Priority
                 </span>
 
-                <h1 className="text-[28px] font-extrabold leading-tight text-white sm:text-5xl lg:text-[42px]">
-                  90 Day Hair Regrowth Treatment
+                <h1 className="text-[28px] md:text-[32px] lg:text-[36px] xl:text-[42px] font-extrabold leading-tight text-white">
+                  90 Day{" "}
+                  <span className="relative inline-block text-[#d92732]">
+                    Hair Regrowth
+                    <svg
+                      className="absolute -bottom-2 left-0 w-full"
+                      height="10"
+                      viewBox="0 0 260 10"
+                      preserveAspectRatio="none"
+                    >
+                      <path
+                        d="M2 7 C 70 2, 190 2, 258 7"
+                        stroke="#d92732"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        fill="none"
+                      />
+                    </svg>
+                  </span>{" "}
+                  Treatment
                 </h1>
 
                 <div className="mt-6 inline-flex items-center gap-4 rounded-2xl bg-white/95 p-3 pr-5 shadow-xl sm:mt-7 sm:gap-5 sm:p-3.5 sm:pr-6">
@@ -402,10 +387,10 @@ export default function ClinicHeroTemplate() {
                     </div>
                   </div>
                   <div className="text-left">
-                    <p className="text-base font-extrabold uppercase tracking-[0.1em] text-[#354f9f] sm:text-lg">
+                    <p className="text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] font-extrabold uppercase tracking-[0.1em] text-[#354f9f]">
                       Before &amp; After
                     </p>
-                    <p className="mt-1 text-xs text-[#1c2437]/60 sm:text-sm">
+                    <p className="mt-1 text-[12px] md:text-[13px] lg:text-[14px] text-[#1c2437]/60">
                       Real patient result, 90 days
                     </p>
                   </div>
@@ -415,7 +400,7 @@ export default function ClinicHeroTemplate() {
                   {uspItems.map((item) => (
                     <span
                       key={item.label}
-                      className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-[13px] font-semibold text-white backdrop-blur-sm sm:text-sm"
+                      className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-[12px] md:text-[13px] lg:text-[14px] font-semibold text-white backdrop-blur-sm"
                     >
                       {item.icon === "star" ? <StarIcon /> : <CheckIcon />}
                       {item.label}
@@ -472,10 +457,10 @@ export default function ClinicHeroTemplate() {
                     <StethoscopeIcon />
                   </span>
                   <div>
-                    <h2 className="text-lg font-extrabold text-[#1c2437] sm:text-xl">
+                    <h2 className="text-[18px] md:text-[20px] lg:text-[22px] xl:text-[24px] font-extrabold text-[#1c2437]">
                       Book Your Free Consultation
                     </h2>
-                    <p className="text-sm text-[#1c2437]/60">
+                    <p className="text-[14px] md:text-[15px] lg:text-[16px] text-[#1c2437]/60">
                       Get in touch with our specialists
                     </p>
                   </div>
@@ -491,7 +476,7 @@ export default function ClinicHeroTemplate() {
                       name="name"
                       placeholder="Name"
                       required
-                      className="h-12 w-full rounded-xl border border-black/10 bg-[#f7f8fb] pl-11 pr-4 text-sm text-[#1c2437] placeholder:text-[#1c2437]/40 transition-colors focus:border-[#354f9f] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#354f9f]/20"
+                      className="h-12 w-full rounded-xl border border-black/10 bg-[#f7f8fb] pl-11 pr-4 text-[14px] md:text-[15px] lg:text-[16px] text-[#1c2437] placeholder:text-[#1c2437]/40 transition-colors focus:border-[#354f9f] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#354f9f]/20"
                     />
                   </div>
 
@@ -504,7 +489,7 @@ export default function ClinicHeroTemplate() {
                       name="phone"
                       placeholder="Phone"
                       required
-                      className="h-12 w-full rounded-xl border border-black/10 bg-[#f7f8fb] pl-11 pr-4 text-sm text-[#1c2437] placeholder:text-[#1c2437]/40 transition-colors focus:border-[#354f9f] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#354f9f]/20"
+                      className="h-12 w-full rounded-xl border border-black/10 bg-[#f7f8fb] pl-11 pr-4 text-[14px] md:text-[15px] lg:text-[16px] text-[#1c2437] placeholder:text-[#1c2437]/40 transition-colors focus:border-[#354f9f] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#354f9f]/20"
                     />
                   </div>
 
@@ -517,7 +502,7 @@ export default function ClinicHeroTemplate() {
                       name="email"
                       placeholder="Email"
                       required
-                      className="h-12 w-full rounded-xl border border-black/10 bg-[#f7f8fb] pl-11 pr-4 text-sm text-[#1c2437] placeholder:text-[#1c2437]/40 transition-colors focus:border-[#354f9f] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#354f9f]/20"
+                      className="h-12 w-full rounded-xl border border-black/10 bg-[#f7f8fb] pl-11 pr-4 text-[14px] md:text-[15px] lg:text-[16px] text-[#1c2437] placeholder:text-[#1c2437]/40 transition-colors focus:border-[#354f9f] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#354f9f]/20"
                     />
                   </div>
 
@@ -529,7 +514,7 @@ export default function ClinicHeroTemplate() {
                       name="concern"
                       required
                       defaultValue=""
-                      className="h-12 w-full appearance-none rounded-xl border border-black/10 bg-[#f7f8fb] pl-11 pr-10 text-sm text-[#1c2437] transition-colors focus:border-[#354f9f] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#354f9f]/20"
+                      className="h-12 w-full appearance-none rounded-xl border border-black/10 bg-[#f7f8fb] pl-11 pr-10 text-[14px] md:text-[15px] lg:text-[16px] text-[#1c2437] transition-colors focus:border-[#354f9f] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#354f9f]/20"
                     >
                       <option value="" disabled>
                         Select your concern
@@ -548,18 +533,18 @@ export default function ClinicHeroTemplate() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="mt-2 inline-flex h-12 w-full items-center justify-center rounded-full bg-gradient-to-r from-[#354f9f] to-[#4a63b8] text-sm font-bold text-white shadow-md shadow-[#354f9f]/25 transition-transform hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0"
+                    className="mt-2 inline-flex h-12 w-full items-center justify-center rounded-full bg-gradient-to-r from-[#354f9f] to-[#4a63b8] text-[14px] lg:text-[16px] font-bold text-white shadow-md shadow-[#354f9f]/25 transition-transform hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0"
                   >
                     {isSubmitting ? "Sending..." : "Get Free Consultation"}
                   </button>
 
                   {submitStatus === "error" && (
-                    <p className="text-center text-xs font-semibold text-[#f1323d]">
+                    <p className="text-center text-[12px] md:text-[13px] lg:text-[14px] font-semibold text-[#f1323d]">
                       Something went wrong. Please try again.
                     </p>
                   )}
 
-                  <p className="text-center text-xs text-[#1c2437]/45">
+                  <p className="text-center text-[12px] md:text-[13px] lg:text-[14px] text-[#1c2437]/45">
                     Your information is safe with us. No spam, ever.
                   </p>
                 </form>

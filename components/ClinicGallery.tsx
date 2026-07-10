@@ -95,7 +95,7 @@ function TreatmentCard({
           sizes={featured ? "(max-width: 1024px) 100vw, 46vw" : "(max-width: 1024px) 100vw, 23vw"}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-transparent" />
-        <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-[#D92732] px-3 py-1.5 text-[11px] font-bold uppercase tracking-wide text-white shadow-md">
+        <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-[#D92732] px-3 py-1.5 text-[12px] md:text-[13px] lg:text-[14px] font-bold uppercase tracking-wide text-white shadow-md">
           <CategoryIcon index={index} />
           {image.category}
         </span>
@@ -103,7 +103,7 @@ function TreatmentCard({
 
       <div className="flex flex-1 flex-col justify-between p-5 sm:p-6">
         <p
-          className={`leading-6 text-[#2b2b2b]/75 transition-all duration-300 ${featured ? "text-[15px] sm:text-[16px]" : "text-[14px]"}`}
+          className="text-[14px] md:text-[15px] lg:text-[16px] leading-6 text-[#2b2b2b]/75 transition-all duration-300"
           style={
             isExpanded
               ? undefined
@@ -122,7 +122,7 @@ function TreatmentCard({
           type="button"
           onClick={() => setIsExpanded((prev) => !prev)}
           aria-expanded={isExpanded}
-          className="mt-4 inline-flex w-fit items-center gap-2 text-[13px] font-bold text-[#364B9B] transition-colors hover:text-[#D92732] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D92732]"
+          className="mt-4 inline-flex w-fit items-center gap-2 text-[14px] lg:text-[16px] font-bold text-[#364B9B] transition-colors hover:text-[#D92732] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D92732]"
         >
           {isExpanded ? "Show Less" : "View Treatment"}
           <ChevronIcon isOpen={isExpanded} />
@@ -159,14 +159,33 @@ export default function ClinicGallery() {
       </svg>
 
       <div className="relative z-10 mx-auto max-sm:mb-4 mb-8 max-w-4xl text-center sm:mb-10">
-        <span className="animate-slip-up mb-0 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#364B9B]">
+        <span className="animate-slip-up mb-0 inline-flex items-center gap-2 rounded-full px-4 py-2 text-[12px] md:text-[13px] lg:text-[14px] font-bold uppercase tracking-[0.18em] text-[#364B9B]">
           <span className="h-px w-6 bg-[#364b9b]" />
             Treatment Section
           <span className="h-px w-6 bg-[#d92732]" />
         </span>
-        <h2 className="animate-slip-up text-2xl font-extrabold leading-tight text-black sm:text-3xl lg:text-[44px]">
-          Advanced Hair Solutions for Hair Fall,{" "}
-Hair Loss Baldness.
+        <h2 className="animate-slip-up  text-[24px] md:text-[24px] lg:text-[28px] xl:text-[32px] font-extrabold leading-tight text-black">
+          Advanced Hair Solutions for Hair Fall,
+          <br />
+          Hair Loss{" "}
+          <span className="relative inline-block text-[#d92732]">
+            Baldness
+            <svg
+              className="absolute -bottom-2 left-0 w-full"
+              height="10"
+              viewBox="0 0 260 10"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M2 7 C 70 2, 190 2, 258 7"
+                stroke="#d92732"
+                strokeWidth="3"
+                strokeLinecap="round"
+                fill="none"
+              />
+            </svg>
+          </span>
+          .
         </h2>
         {/* <p className="animate-slip-up animation-delay-200 mx-auto max-sm:mt-1 mt-3 max-w-3xl text-sm leading-6 text-[#2b2b2b]/70 sm:text-base lg:text-lg">
           Whether you&apos;re experiencing hair fall, hair thinning, excessive

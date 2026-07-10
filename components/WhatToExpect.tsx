@@ -74,7 +74,7 @@ function JourneyCard({ service }: { service: (typeof services)[number] }) {
         {service.step}
       </span>
 
-      <div className="animate-slip-up animation-delay-100 relative z-10 mb-[30px] flex h-[120px] w-[120px] items-center justify-center rounded-full bg-[#364b9b] shadow-[0_0_0_6px_rgb(255_255_255_/_4%)] transition-colors duration-300 group-hover:bg-[#d92732] max-sm:mb-[8px]">
+      <div className="animate-slip-up animation-delay-100 relative z-10 mb-[10px] flex h-[120px] w-[120px] items-center justify-center rounded-full bg-[#364b9b] shadow-[0_0_0_6px_rgb(255_255_255_/_4%)] transition-colors duration-300 group-hover:bg-[#d92732] max-sm:mb-[8px]">
         <Image
           src={service.icon}
           alt={`${service.title} icon`}
@@ -82,15 +82,15 @@ function JourneyCard({ service }: { service: (typeof services)[number] }) {
           height={93}
           className="h-[74px] w-[74px] object-contain brightness-0 invert transition duration-300"
         />
-        <span className="absolute -bottom-1 -right-1 flex h-9 w-9 items-center justify-center rounded-full border-[3px] border-[#070b16] bg-white text-[13px] font-extrabold text-[#364b9b] transition-colors duration-300 group-hover:text-[#d92732]">
+        <span className="absolute -bottom-1 -right-1 flex h-9 w-9 items-center justify-center rounded-full border-[3px] border-[#070b16] bg-white text-[12px] md:text-[13px] lg:text-[14px] font-extrabold text-[#364b9b] transition-colors duration-300 group-hover:text-[#d92732]">
           {service.step}
         </span>
       </div>
 
-      <h3 className="animate-slip-up animation-delay-200 relative z-10 text-[23px] font-bold leading-tight tracking-tight text-white">
+      <h3 className="animate-slip-up animation-delay-200 relative z-10 text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] font-bold leading-tight tracking-tight text-white">
         {service.title}
       </h3>
-      <div className="animate-slip-up animation-delay-300 relative z-10 mt-[22px] space-y-[10px] text-[17px] leading-[1.4] text-white/65 max-sm:mt-[10px]">
+      <div className="animate-slip-up animation-delay-300 relative z-10 max-sm:mt-[5px] mt-[10px] space-y-[10px] text-[14px] md:text-[15px] lg:text-[16px] leading-[1.4] text-white/65 max-sm:mt-[10px]">
         {service.lines.map((line) => (
           <p key={line}>{line}</p>
         ))}
@@ -119,7 +119,7 @@ export default function WhatToExpect() {
 
   return (
     <section
-      className="relative scroll-mt-28 overflow-hidden bg-[#070b16] px-5 py-5 text-white sm:py-14 lg:py-[64px]"
+      className="relative scroll-mt-28 overflow-hidden bg-[#070b16] px-5 py-5 text-white sm:py-14 lg:py-[54px]"
       id="journey"
     >
       {/* background image layer — swap the src below for your own asset in /public */}
@@ -136,22 +136,39 @@ export default function WhatToExpect() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#070b16] to-transparent" />
 
       <div className="relative z-10 mx-auto max-w-[1280px] text-center">
-        <span className="animate-slip-up inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.28em] text-[#d92732]">
+        <span className="animate-slip-up inline-flex items-center gap-2 text-[12px] md:text-[13px] lg:text-[14px] font-bold uppercase tracking-[0.28em] text-[#d92732]">
           <span className="h-px w-6 bg-[#d92732]" />
           The Journey
           <span className="h-px w-6 bg-[#d92732]" />
         </span>
 
-        <h2 className="animate-slip-up animation-delay-100 mt-4 text-2xl font-extrabold leading-tight text-white sm:text-3xl lg:text-[44px]">
-          Process / Journey{" "}
-          <span className="text-[#364b9b]">Section</span>
+        <h2 className="animate-slip-up animation-delay-100 mt-2 text-[24px] md:text-[24px] lg:text-[28px] xl:text-[32px] font-extrabold leading-tight text-white">
+          Process /{" "}
+          <span className="relative inline-block text-[#d92732]">
+            Journey
+            <svg
+              className="absolute -bottom-2 left-0 w-full"
+              height="10"
+              viewBox="0 0 260 10"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M2 7 C 70 2, 190 2, 258 7"
+                stroke="#d92732"
+                strokeWidth="3"
+                strokeLinecap="round"
+                fill="none"
+              />
+            </svg>
+          </span>{" "}
+          Section
         </h2>
-        <p className="animate-slip-up animation-delay-200 mx-auto mt-3 max-w-xl text-[19px] leading-7 text-white/72 sm:text-[21px]">
+        <p className="animate-slip-up animation-delay-200 mx-auto mt-1 max-w-xl text-[14px] md:text-[15px] lg:text-[16px] leading-7 text-white/72">
           Your Hair Restoration Journey
         </p>
 
         {/* mobile carousel — single centered card, equal spacing both sides */}
-        <div className="mt-[50px] max-sm:mt-[18px] sm:hidden">
+        <div className="mt-[30px] max-sm:mt-[18px] sm:hidden">
           <JourneyCard service={currentService} />
 
           <div className="mt-8 flex items-center justify-center gap-6 max-sm:mt-5">
@@ -189,7 +206,7 @@ export default function WhatToExpect() {
         </div>
 
         {/* desktop grid — four equal columns joined by a centered connecting line */}
-        <div className="relative mt-[72px] hidden max-sm:mt-[10px] sm:grid sm:grid-cols-2 sm:gap-x-10 sm:gap-y-14 lg:grid-cols-4 lg:gap-x-8">
+        <div className="relative mt-[42px] hidden max-sm:mt-[10px] sm:grid sm:grid-cols-2 sm:gap-x-10 sm:gap-y-14 lg:grid-cols-4 lg:gap-x-8">
           <span className="pointer-events-none absolute left-[12.5%] right-[12.5%] top-[104px] hidden h-px bg-gradient-to-r from-transparent via-white/15 to-transparent lg:block" />
           {services.map((service) => (
             <JourneyCard service={service} key={service.title} />

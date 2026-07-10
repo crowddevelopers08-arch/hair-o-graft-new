@@ -69,6 +69,7 @@ export default function AboutHealthcare() {
           alt=""
           fill
           aria-hidden="true"
+          sizes="100vw"
           className="object-cover object-center opacity-40"
         />
       </div>
@@ -89,13 +90,31 @@ export default function AboutHealthcare() {
       <div className="relative z-10 mx-auto max-w-[1320px]">
         {/* Centered plaque-style header */}
         <div className="mb-14 max-sm:mb-6 flex flex-col items-center text-center">
-          <div className="animate-slip-up flex items-center gap-3 text-[13px] font-semibold uppercase tracking-[0.32em] text-[#A9B2D9]">
+          <div className="animate-slip-up flex items-center gap-3 text-[12px] md:text-[13px] lg:text-[14px] font-semibold uppercase tracking-[0.32em] text-[#D92732]">
             <span className="h-px w-8 bg-[#364B9B]" />
             Clinic Section
             <span className="h-px w-8 bg-[#D92732]" />
           </div>
-          <h2 className="animate-slip-up animation-delay-100 mt-3 max-w-[720px] text-[34px] font-extrabold leading-[1.2] text-white sm:text-[42px] lg:text-[46px]">
-            Why Choose Hair O Graft?
+          <h2 className="animate-slip-up animation-delay-100 mt-3 max-w-[720px] text-[24px] md:text-[24px] lg:text-[28px] xl:text-[32px] font-extrabold leading-[1.2] text-white">
+            Why Choose{" "}
+            <span className="relative inline-block text-[#d92732]">
+              Hair O Graft
+              <svg
+                className="absolute -bottom-2 left-0 w-full"
+                height="10"
+                viewBox="0 0 260 10"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M2 7 C 70 2, 190 2, 258 7"
+                  stroke="#d92732"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  fill="none"
+                />
+              </svg>
+            </span>
+            ?
           </h2>
         </div>
 
@@ -123,13 +142,13 @@ export default function AboutHealthcare() {
                   <ClockIcon />
                 </div>
                 <div>
-                  <p className="text-[16px] font-extrabold leading-tight text-[#0D1330]">24/7 availability</p>
-                  <p className="mt-0.5 text-[13px] font-medium text-[#0D1330]/55">For your peace of mind</p>
+                  <p className="text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] font-extrabold leading-tight text-[#0D1330]">24/7 availability</p>
+                  <p className="mt-0.5 text-[12px] md:text-[13px] lg:text-[14px] font-medium text-[#0D1330]/55">For your peace of mind</p>
                 </div>
               </div>
             </div>
 
-            <p className="mt-4 text-center font-mono text-[11px] uppercase tracking-[0.2em] text-[#A9B2D9]/70 lg:text-left">
+            <p className="mt-4 text-center font-mono text-[12px] md:text-[13px] lg:text-[14px] uppercase tracking-[0.2em] text-[#A9B2D9]/70 lg:text-left">
               Hair O Graft · Chennai
             </p>
           </div>
@@ -140,7 +159,7 @@ export default function AboutHealthcare() {
               <CornerBrackets color="red" />
 
               <div>
-                <p className="max-w-[540px] text-[17px] font-medium leading-8 text-[#A9B2D9]">
+                <p className="max-w-[540px] text-[14px] md:text-[15px] lg:text-[16px] font-medium leading-8 text-[#A9B2D9]">
                   Chennai&apos;s Trusted Hair Restoration Clinic. At Hair O Graft, we
                   focus on treating the root cause of hair loss, not just masking the
                   symptoms. Using advanced medical technology and evidence-based
@@ -157,7 +176,7 @@ export default function AboutHealthcare() {
                       className="group flex items-center gap-3 rounded-lg border border-white/8 bg-white/[0.02] px-3.5 py-3 transition-colors duration-300 hover:border-[#D92732]/40 hover:bg-white/[0.05]"
                     >
                       <CheckIcon />
-                      <span className="block flex-1 text-left text-[14.5px] font-semibold leading-5 text-white/90">
+                      <span className="block flex-1 text-left text-[14px] md:text-[15px] lg:text-[16px] font-semibold leading-5 text-white/90">
                         {point}
                       </span>
                     </li>
@@ -171,14 +190,14 @@ export default function AboutHealthcare() {
                     <Image src="/doctors.jpeg" alt="Michael Jordan" fill className="object-cover" />
                   </div>
                   <div>
-                    <p className="text-[18px] font-extrabold leading-tight text-white">Dr. E. Hema Shree</p>
-                    <p className="mt-0.5 text-[13.5px] font-medium text-[#A9B2D9]">BDS | FMC</p>
+                    <p className="text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] font-extrabold leading-tight text-white">Dr. E. Hema Shree</p>
+                    <p className="mt-0.5 text-[12px] md:text-[13px] lg:text-[14px] font-medium text-[#A9B2D9]">BDS | FMC</p>
                   </div>
                 </div>
 
                 <a
                   href="#lead-form"
-                  className="group inline-flex h-[50px] min-w-[164px] items-center justify-between rounded-full bg-[#D92732] pl-6 pr-2 text-[15px] font-semibold text-white transition-transform duration-300 hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  className="group inline-flex h-[50px] min-w-[164px] items-center justify-between rounded-full bg-[#D92732] pl-6 pr-2 text-[14px] lg:text-[16px] font-semibold text-white transition-transform duration-300 hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
                   Learn More
                   <span className="ml-4 flex h-9 w-9 items-center justify-center rounded-full bg-[#0D1330] text-white transition-transform duration-300 group-hover:translate-x-0.5">

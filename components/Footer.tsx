@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="pointer-events-none absolute -left-24 -top-24 h-[300px] w-[300px] rounded-full bg-[#364b9b]/20 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-28 -right-16 h-[280px] w-[280px] rounded-full bg-[#d92732]/[0.12] blur-3xl" />
 
-      <div className="relative z-10 mx-auto flex max-w-[1005px] flex-col items-center gap-3 text-center text-[14.5px] font-medium text-white/65 sm:flex-row sm:justify-between sm:gap-4 sm:text-left">
+      <div className="relative z-10 mx-auto flex max-w-[1005px] flex-col items-center gap-3 text-center text-[14px] md:text-[15px] lg:text-[16px] font-medium text-white/65 sm:flex-row sm:justify-between sm:gap-4 sm:text-left">
         <p>
           Copyright 2026{" "}
           <span className="font-extrabold text-white">Hair O Graft.</span>{" "}

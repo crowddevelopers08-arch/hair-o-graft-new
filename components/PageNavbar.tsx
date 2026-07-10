@@ -28,7 +28,7 @@ export default function PageNavbar() {
             className="h-11 w-11 rounded-full border-2 border-[#354f9f] bg-white object-contain"
             priority
           />
-          <span className="text-[20px] font-extrabold leading-none text-[#0b1233] sm:text-[22px]">
+          <span className="text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] font-extrabold leading-none text-[#0b1233]">
             Hair O Graft
           </span>
         </Link>
@@ -36,14 +36,14 @@ export default function PageNavbar() {
         <div className="grid w-full grid-cols-2 gap-3 sm:flex sm:w-auto sm:items-center">
           <a
             href="tel:+917448866675"
-            className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[#f1323d] px-4 text-[13px] font-extrabold text-white transition-colors duration-200 hover:bg-[#354f9f] sm:px-5 sm:text-[14px]"
+            className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[#f1323d] px-4 text-[14px] lg:text-[16px] font-extrabold text-white transition-colors duration-200 hover:bg-[#354f9f] sm:px-5"
           >
             <PhoneIcon />
             Call Now
           </a>
           <Link
             href="/"
-            className="inline-flex h-11 items-center justify-center rounded-full border border-[#354f9f]/15 bg-[#354f9f]/10 px-4 text-[13px] font-extrabold text-[#354f9f] transition-colors duration-200 hover:bg-[#354f9f] hover:text-white sm:px-5 sm:text-[14px]"
+            className="inline-flex h-11 items-center justify-center rounded-full border border-[#354f9f]/15 bg-[#354f9f]/10 px-4 text-[14px] lg:text-[16px] font-extrabold text-[#354f9f] transition-colors duration-200 hover:bg-[#354f9f] hover:text-white sm:px-5"
           >
             Back To Home
           </Link>

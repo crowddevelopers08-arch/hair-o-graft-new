@@ -1,19 +1,13 @@
 import Image from "next/image";
 
 const features = [
-  {
-    title: "Hair Regrowth Treatment",
-  },
-  {
-    title: "Hair Loss Treatment",
-  },
-  {
-    title: "Baldness Treatment",
-  },
-  {
-    title: "Scalp Treatments",
-  },
+  { title: "Hair Regrowth Treatment" },
+  { title: "Hair Loss Treatment" },
+  { title: "Baldness Treatment" },
+  { title: "Scalp Treatments" },
 ];
+
+const credentials = ["BDS", "FMC"];
 
 function CheckIcon() {
   return (
@@ -54,12 +48,194 @@ function QuoteIcon() {
   );
 }
 
+/** Certificate-style corner brackets — reused wherever a panel should read
+ *  as "verified / certified", echoing the same accent used on the About
+ *  Healthcare section. */
+function CornerBrackets({ color = "#364B9B" }: { color?: string }) {
+  return (
+    <>
+      <svg className="pointer-events-none absolute -left-2.5 -top-2.5 h-9 w-9" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <path d="M2 14V6a4 4 0 0 1 4-4h8" stroke={color} strokeWidth="2.4" strokeLinecap="round" />
+      </svg>
+      <svg className="pointer-events-none absolute -right-2.5 -bottom-2.5 h-9 w-9" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <path d="M34 22v8a4 4 0 0 1-4 4h-8" stroke={color} strokeWidth="2.4" strokeLinecap="round" />
+      </svg>
+    </>
+  );
+}
+
+/* ---------------------------------------------------------------------- *
+ * Shared design tokens (spacing / radius / elevation) so every card in
+ * this section reads as one system instead of one-off values.
+ * ---------------------------------------------------------------------- */
+const RADIUS_LG = "rounded-[28px] max-sm:rounded-[22px]";
+const SHADOW_SOFT = "shadow-[0_2px_10px_rgb(11_18_51_/_5%)]";
+
+/** Floating "5+ years" badge — sizes itself per breakpoint via one class set. */
+
+
+/** Small video-call thumbnail with the doctor's name label underneath. */
+function VideoThumb({ className = "", imgHeightClass = "h-[190px] sm:h-[215px]" }) {
+  return (
+    <div
+      className={`overflow-hidden rounded-[26px] bg-[#0b1233] ring-1 ring-white/10 sm:rounded-[28px] ${className}`}
+    >
+      <div className={`relative ${imgHeightClass}`}>
+        <Image
+          src="/surgery_fue.png"
+          alt="Professional hair consultation video support"
+          fill
+          className="object-cover"
+          sizes="220px"
+        />
+      </div>
+    </div>
+  );
+}
+
+/**
+ * The doctor's photo collage. Layout differs enough between phone and
+ * desktop (stacked vs. overlapping) that it's kept as two compositions,
+ * but every repeated piece (badge, thumb, gradient) is a shared component.
+ */
+function DoctorImageCollage() {
+  return (
+    <>
+      {/* Phone / tablet composition */}
+      <div className="relative mx-auto min-h-[480px] w-full max-w-[420px] sm:min-h-[560px] lg:hidden">
+        <div className="absolute inset-x-4 top-6 bottom-6 -z-10 rounded-[40px] bg-gradient-to-br from-[#364b9b]/[0.08] to-[#d92732]/[0.06]" />
+
+        <div className="absolute left-0 top-0 bottom-0 w-full sm:w-[80%] overflow-hidden rounded-[34px] bg-[#f6f8ff] shadow-[0_20px_45px_rgb(11_18_51_/_12%)] ring-1 ring-[#0b1233]/[0.04] sm:rounded-[42px]">
+          <Image
+            src="/doctors.jpeg"
+            alt="Dr. E. Hema Shree hair specialist caring for patient"
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 640px) 100vw, 80vw"
+            priority
+          />
+        </div>
+
+        <VideoThumb
+          className="absolute right-0 top-0 w-[46%] min-w-[150px] sm:min-w-[170px]"
+          imgHeightClass="h-[140px] sm:h-[160px]"
+        />
+      </div>
+
+      {/* Desktop composition */}
+      <div className="relative mx-auto hidden min-h-[560px] w-full max-w-[540px] lg:mx-0 lg:block lg:justify-self-end">
+        <div className="absolute -inset-6 -z-10 rounded-[64px]" />
+
+        <div className="absolute left-0 top-0 bottom-0 w-[82%] overflow-hidden rounded-[52px] bg-[#f6f8ff] shadow-[0_28px_60px_rgb(11_18_51_/_14%)] ring-1 ring-[#0b1233]/[0.04]">
+          <Image
+            src="/doctors.jpeg"
+            alt="Dr. E. Hema Shree hair specialist caring for patient"
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 72vw, 520px"
+            priority
+          />
+        </div>
+
+        <VideoThumb
+          className="absolute right-0 top-[-50px] w-[50%] min-w-[260px]"
+          imgHeightClass="h-[220px] sm:h-[260px]"
+        />
+      </div>
+    </>
+  );
+}
+
+function DoctorHeader() {
+  return (
+    <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+      <span className="text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] font-extrabold uppercase tracking-wide text-[#0b1233]">
+        Dr. E. Hema Shree
+      </span>
+      <span className="flex items-center gap-2">
+        {credentials.map((cred) => (
+          <span
+            key={cred}
+            className={`rounded-full px-3 py-1 text-[12px] md:text-[13px] lg:text-[14px] font-bold tracking-wide ${
+              cred === "BDS"
+                ? "bg-[#364b9b]/[0.08] text-[#364b9b]"
+                : "bg-[#d92732]/[0.08] text-[#d92732]"
+            }`}
+          >
+            {cred}
+          </span>
+        ))}
+      </span>
+    </div>
+  );
+}
+
+function ExpertiseGrid() {
+  return (
+    <div className={``}>
+      <span className="text-[12px] md:text-[13px] lg:text-[14px] font-extrabold uppercase tracking-[0.14em] text-[#364b9b]/70">
+        Areas of Expertise
+      </span>
+      <div className="mt-4 grid gap-3 sm:grid-cols-2 sm:gap-x-4">
+        {features.map((feature) => (
+          <div
+            key={feature.title}
+            className="flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-[0_2px_8px_rgb(11_18_51_/_5%)] ring-1 ring-[#0b1233]/[0.03] transition-colors duration-200 hover:bg-[#364b9b]/[0.06]"
+          >
+            <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#364b9b] text-white">
+              <CheckIcon />
+            </div>
+            <h3 className="text-[16px] md:text-[18px] lg:text-[18px] xl:text-[18px] font-extrabold leading-tight text-[#0b1233]">
+              {feature.title}
+            </h3>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function Testimonial() {
+  return (
+    <blockquote className="relative flex gap-4 rounded-[22px] border border-[#0b1233]/[0.05] bg-[#0b1233]/[0.02] py-4 pl-5 pr-4 sm:py-5 sm:pl-6">
+      <span className="absolute inset-y-2 left-0 w-[3px] rounded-full bg-[#d92732]" />
+      <span className="mt-1 shrink-0 text-[#364b9b]/20">
+        <QuoteIcon />
+      </span>
+      <p className="text-[14px] md:text-[15px] lg:text-[16px] font-medium italic leading-7 text-[#2b3a55]">
+        She believes every patient deserves a personalized treatment plan
+        based on their unique hair condition and focuses on achieving
+        natural-looking, long-lasting results.
+      </p>
+    </blockquote>
+  );
+}
+
+function SectionDivider() {
+  return (
+    <div className="h-px w-full bg-gradient-to-r from-[#0b1233]/12 via-[#0b1233]/12 to-transparent" />
+  );
+}
+
 export default function ProfessionalsSection() {
   return (
     <section
       className="relative scroll-mt-28 overflow-hidden bg-white px-5 py-8 max-sm:px-4 max-sm:py-10 sm:px-5 lg:px-10 lg:py-8"
       id="doctors"
     >
+      {/* Doctor photo set as an ambient background behind the section */}
+      <div className="pointer-events-none absolute inset-0">
+        <Image
+          src="/doctors.jpeg"
+          alt=""
+          fill
+          aria-hidden="true"
+          sizes="100vw"
+          className="object-cover object-center opacity-[0.08]"
+        />
+        <div className="absolute inset-0 bg-white/85" />
+      </div>
+
       {/* Ambient brand glow, consistent with the CTA section */}
       <div className="pointer-events-none absolute -right-24 -top-32 h-[420px] w-[420px] rounded-full bg-[#364b9b]/[0.06] blur-3xl" />
       <div className="pointer-events-none absolute -bottom-28 -left-16 h-[360px] w-[360px] rounded-full bg-[#d92732]/[0.05] blur-3xl" />
@@ -81,131 +257,74 @@ export default function ProfessionalsSection() {
         ))}
       </svg>
 
-      {/* centered intro — one eyebrow, one headline, one accent bar, all on one axis */}
+      {/* Centered intro */}
       <div className="relative z-10 mx-auto flex max-w-[1160px] flex-col items-center text-center">
-        <span className="animate-slip-up inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.28em] text-[#364B9B]">
+        <span className="inline-flex items-center gap-2 text-[12px] md:text-[13px] lg:text-[14px] font-bold uppercase tracking-[0.28em] text-[#364B9B]">
           <span className="h-px w-6 bg-[#364b9b]" />
           Doctor Section
           <span className="h-px w-6 bg-[#d92732]" />
         </span>
 
-        <h2 className="animate-slip-up animation-delay-100 mt-3 max-w-[580px] text-[32px] font-extrabold leading-[1.16] text-[#0b1233] sm:text-[40px] lg:text-[44px]">
-          Meet Your Hair Specialist
+        <h2 className="mt-3 max-w-[580px] text-[24px] md:text-[24px] lg:text-[28px] xl:text-[32px] font-extrabold leading-[1.16] text-[#0b1233]">
+          Meet Your{" "}
+          <span className="relative inline-block text-[#d92732]">
+            Hair Specialist
+            <svg
+              className="absolute -bottom-2 left-0 w-full"
+              height="10"
+              viewBox="0 0 260 10"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M2 7 C 70 2, 190 2, 258 7"
+                stroke="#d92732"
+                strokeWidth="3"
+                strokeLinecap="round"
+                fill="none"
+              />
+            </svg>
+          </span>
         </h2>
-
       </div>
 
-      {/* framed detail card — text and imagery share one contained, symmetric composition */}
-      <div className="relative z-10 mx-auto mt-4 max-w-[1220px] rounded-[44px] bg-white/70 p-6 max-sm:mt-3 max-sm:p-4 backdrop-blur-sm sm:p-10 lg:p-14">
+      {/* Framed detail card */}
+      <div
+        className={`relative z-10 mx-auto mt-6 max-w-[1220px] p-6 backdrop-blur-sm max-sm:mt-4 max-sm:rounded-[24px] max-sm:p-4 sm:p-10 sm:rounded-[44px] lg:rounded-[44px] lg:p-14`}
+      >
+        <CornerBrackets color="#364B9B" />
+
         <div className="relative grid max-w-[1160px] items-center gap-14 lg:mx-auto lg:grid-cols-2 lg:gap-16">
           <span className="pointer-events-none absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-[#0b1233]/10 to-transparent lg:block" />
 
-          <div className="relative z-10 mx-auto w-full max-w-[540px] lg:mx-0 lg:justify-self-start">
-            <div className="animate-slip-up animation-delay-150 flex items-center gap-3">
-              <span className="text-[15px] font-extrabold uppercase text-[#0b1233] sm:text-[16px]">
-                Dr. E. Hema Shree
-              </span>
-              <span className="h-4 w-px bg-[#0b1233]/15" />
-              <span className="rounded-full bg-[#364b9b]/[0.08] px-3 py-1 text-[12px] font-bold tracking-wide text-[#364b9b]">
-                BDS
-              </span>
-              <span className="rounded-full bg-[#d92732]/[0.08] px-3 py-1 text-[12px] font-bold tracking-wide text-[#d92732]">
-                FMC
-              </span>
-            </div>
-
-            <p className="animate-slip-left animation-delay-200 mt-4 max-sm:mt-3 max-w-[500px] text-[15px] font-medium leading-7 text-[#2b3a55] sm:text-[16px]">
-              Aesthetic Practitioner &amp; Cosmetology Specialist with over 5+
-              years of clinical experience. She creates personalized treatment
-              plans based on each patient&apos;s unique hair condition.
-            </p>
-
-            <div className="animate-slip-up animation-delay-300 relative mx-auto mt-8 max-sm:mt-5 min-h-[510px] w-full max-w-[420px] sm:min-h-[560px] lg:hidden">
-              <div className="absolute inset-x-4 top-6 bottom-6 -z-10 rounded-[40px] bg-gradient-to-br from-[#364b9b]/[0.08] to-[#d92732]/[0.06]" />
-              <div className="absolute right-0 top-3 h-[461px] w-[84%] overflow-hidden rounded-[34px] bg-[#f6f8ff] shadow-[0_20px_45px_rgb(11_18_51_/_12%)] sm:h-[400px] sm:rounded-[42px]">
-                <Image
-                  src="/surgery_gfc.png"
-                  alt="Dr. E. Hema Shree hair specialist caring for patient"
-                  fill
-                  className="object-cover object-center"
-                  sizes="82vw"
-                  priority
-                />
-              </div>
-
-              <div className="absolute left-0 top-0 w-[58%] min-w-[190px] overflow-hidden rounded-[26px] bg-[#0b1233] shadow-[0_18px_40px_rgb(11_18_51_/_22%)] sm:min-w-[215px] sm:rounded-[28px]">
-                <div className="relative h-[190px] sm:h-[215px]">
-                  <Image
-                    src="/doctors.jpeg"
-                    alt="Professional hair consultation video support"
-                    fill
-                    className="object-cover"
-                    sizes="220px"
-                  />
-                </div>
-                <div className="bg-[#0b1233] py-3 text-center text-[12px] font-extrabold leading-none tracking-wide text-white sm:text-[13px]">
-                  DR. E. HEMA SHREE
-                </div>
-              </div>
-
-              <div className="animate-pop animation-delay-500 absolute bottom-2 right-0 w-[78%] max-w-[300px] rounded-2xl bg-[#364b9b] px-5 py-5 text-white shadow-[0_18px_36px_rgb(54_75_155_/_28%)]">
-                <div className="absolute -right-3 -top-5 flex h-[62px] w-[62px] items-center justify-center rounded-full bg-[#d92732]">
-                  <span className="text-[20px] font-extrabold leading-none text-white">
-                    5+
-                  </span>
-                </div>
-                <h3 className="pr-9 text-[18px] font-extrabold leading-tight">
-                  Years Experience
-                </h3>
-                <p className="mt-3 text-[13px] font-semibold leading-6 text-white/90">
-                  Clinical experience in advanced hair restoration and
-                  cosmetology care.
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-9 max-sm:mt-6 h-px w-full max-w-[500px] bg-gradient-to-r from-[#0b1233]/12 via-[#0b1233]/12 to-transparent" />
-
-            <div className="mt-8 max-sm:mt-5 max-w-[500px] rounded-[22px] bg-[#f6f8ff]/60 p-5 max-sm:p-4 shadow-[0_2px_10px_rgb(11_18_51_/_4%)] sm:p-6">
-              <span className="text-[12px] font-extrabold uppercase tracking-[0.14em] text-[#364b9b]/70">
-                Areas of Expertise
-              </span>
-              <div className="mt-4 max-sm:mt-3 grid gap-x-4 max-sm:gap-y-2.5 gap-y-3 sm:grid-cols-2">
-                {features.map((feature, index) => (
-                  <div
-                    className="animate-slip-left flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-[0_2px_8px_rgb(11_18_51_/_5%)] transition-colors duration-200 hover:bg-[#364b9b]/[0.06]"
-                    style={{ animationDelay: `${300 + index * 120}ms` }}
-                    key={feature.title}
-                  >
-                    <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#364b9b] text-white">
-                      <CheckIcon />
-                    </div>
-                    <div className="flex min-h-8 items-center">
-                      <h3 className="text-[15px] font-extrabold leading-tight text-[#0b1233] sm:text-[16px]">
-                        {feature.title}
-                      </h3>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative mt-8 max-sm:mt-5 flex max-w-[500px] gap-4 rounded-[22px] bg-[#0b1233]/[0.02] py-4 max-sm:py-3 pl-5 max-sm:pl-4 pr-4 max-sm:pr-3">
-              <span className="absolute inset-y-2 left-0 w-[3px] rounded-full bg-[#d92732]" />
-              <span className="mt-1 shrink-0 text-[#364b9b]/20">
-                <QuoteIcon />
-              </span>
-              <p className="animate-slip-left animation-delay-600 text-[15px] font-medium italic leading-7 text-[#2b3a55] sm:text-[16px]">
-                She believes every patient deserves a personalized treatment
-                plan based on their unique hair condition and focuses on
-                achieving natural-looking, long-lasting results.
+          {/* Info column — one consistent vertical rhythm instead of
+              scattered per-element margins */}
+          <div className="relative z-10 mx-auto flex w-full max-w-[540px] flex-col gap-8 max-sm:gap-5 lg:mx-0 lg:justify-self-start">
+            <div className="flex flex-col gap-4 max-sm:gap-3">
+              <DoctorHeader />
+              <p className="max-w-[500px] text-[14px] md:text-[15px] lg:text-[16px] font-medium leading-7 text-[#2b3a55]">
+                Aesthetic Practitioner &amp; Cosmetology Specialist with over
+                5+ years of clinical experience. She creates personalized
+                treatment plans based on each patient&apos;s unique hair
+                condition.
               </p>
             </div>
 
-            <div className="mt-9 max-sm:mt-6 h-px w-full max-w-[500px] bg-gradient-to-r from-[#0b1233]/12 via-[#0b1233]/12 to-transparent" />
+            {/* Image collage renders here on phones/tablets; it re-slots
+                into the right column below on lg+ via its own hidden/block classes */}
+            <div className="mt-4 max-sm:mt-6 lg:hidden lg:mt-0">
+              <DoctorImageCollage />
+            </div>
+
+            <SectionDivider />
+
+            <ExpertiseGrid />
+
+            <Testimonial />
+
+            <SectionDivider />
 
             <a
-              className="animate-slip-up animation-delay-600 group max-sm:mt-5 mt-8 inline-flex h-[52px] items-center justify-center gap-2 rounded-full bg-[#364b9b] px-8 text-[16px] font-bold text-white transition-colors duration-200 hover:bg-[#d92732]"
+              className="group inline-flex h-[52px] w-full items-center justify-center gap-2 rounded-full bg-[#364b9b] px-8 text-[14px] lg:text-[16px] font-bold text-white transition-all duration-200 hover:bg-[#d92732] hover:shadow-[0_10px_24px_rgb(217_39_50_/_28%)] sm:w-auto"
               href="#lead-form"
             >
               Book Appointment
@@ -213,69 +332,14 @@ export default function ProfessionalsSection() {
             </a>
           </div>
 
-          <div className="animate-slip-right relative mx-auto hidden min-h-[560px] w-full max-w-[540px] lg:mx-0 lg:block lg:justify-self-end">
-            <div className="absolute -inset-6 -z-10 rounded-[64px] bg-gradient-to-br from-[#364b9b]/[0.08] to-[#d92732]/[0.06]" />
-            <svg
-              className="pointer-events-none absolute -left-8 bottom-10 -z-10 h-24 w-24 text-[#364b9b]/15"
-              viewBox="0 0 100 100"
-              fill="none"
-              aria-hidden="true"
-            >
-              {Array.from({ length: 5 }).map((_, row) =>
-                Array.from({ length: 5 }).map((_, col) => (
-                  <circle
-                    key={`${row}-${col}`}
-                    cx={10 + col * 20}
-                    cy={10 + row * 20}
-                    r="2.5"
-                    fill="currentColor"
-                  />
-                ))
-              )}
-            </svg>
-            <div className="absolute right-0 top-0 h-[420px] w-[82%] overflow-hidden rounded-[52px] bg-[#f6f8ff] shadow-[0_28px_60px_rgb(11_18_51_/_14%)] sm:h-[520px]">
-              <Image
-                src="/surgery_gfc.png"
-                alt="Dr. E. Hema Shree hair specialist caring for patient"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 72vw, 520px"
-                priority
-              />
-            </div>
-
-            <div className="absolute left-0 top-[-50px] w-[50%] min-w-[260px] overflow-hidden rounded-[32px] bg-[#0b1233] shadow-[0_18px_40px_rgb(11_18_51_/_22%)]">
-              <div className="relative h-[220px] sm:h-[260px]">
-                <Image
-                  src="/doctors.jpeg"
-                  alt="Professional hair consultation video support"
-                  fill
-                  className="object-cover"
-                  sizes="320px"
-                />
-              </div>
-              <div className="bg-[#0b1233] py-3 text-center text-[16px] font-extrabold leading-none tracking-wide text-white">
-                DR. E. HEMA SHREE
-              </div>
-            </div>
-
-            <div className="animate-pop animation-delay-500 absolute bottom-[-50px] right-[-50px] w-[255px] rounded-2xl bg-[#364b9b] px-6 py-6 text-white shadow-[0_18px_36px_rgb(54_75_155_/_28%)] sm:w-[315px]">
-              <div className="absolute -right-7 -top-8 flex h-[82px] w-[82px] items-center justify-center rounded-full bg-[#d92732]">
-                <span className="text-[28px] font-extrabold leading-none text-white">
-                  5+
-                </span>
-              </div>
-              <h3 className="text-[21px] font-extrabold leading-tight">
-                Years Experience
-              </h3>
-              <p className="mt-5 text-[15px] font-semibold leading-7 text-white/90">
-                Clinical experience in advanced hair restoration and
-                cosmetology care.
-              </p>
-            </div>
+          {/* Desktop-only slot for the collage (mobile version already
+              rendered inline in the left column above) */}
+          <div className="hidden lg:flex lg:h-full lg:flex-col lg:justify-end lg:self-stretch">
+            <DoctorImageCollage />
           </div>
         </div>
       </div>
     </section>
   );
 }
+

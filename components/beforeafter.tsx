@@ -88,15 +88,32 @@ export default function BeforeAfter() {
 
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="mx-auto max-sm:mb-4 mb-8 max-w-3xl text-center sm:mb-10">
-          <span className="animate-slip-up mb-0 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#364B9B]">
+          <span className="animate-slip-up mb-0 inline-flex items-center gap-2 rounded-full px-4 py-2 text-[12px] md:text-[13px] lg:text-[14px] font-bold uppercase tracking-[0.18em] text-[#364B9B]">
            <span className="h-px w-6 bg-[#364b9b]" />
               Client Results
             <span className="h-px w-6 bg-[#d92732]" />
           </span>
-          <h2 className="animate-slip-up animation-delay-100 text-2xl font-extrabold leading-tight text-black sm:text-3xl lg:text-4xl">
-            See What Our Clients Achieved
+          <h2 className="animate-slip-up animation-delay-100 text-[24px] md:text-[24px] lg:text-[28px] xl:text-[32px] font-extrabold leading-tight text-black">
+            See What Our{" "}
+            <span className="relative inline-block text-[#d92732]">
+              Clients Achieved
+              <svg
+                className="absolute -bottom-2 left-0 w-full"
+                height="10"
+                viewBox="0 0 260 10"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M2 7 C 70 2, 190 2, 258 7"
+                  stroke="#d92732"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  fill="none"
+                />
+              </svg>
+            </span>
           </h2>
-          <p className="animate-slip-up animation-delay-200 mt-3 max-sm:mt-1 text-sm leading-6 text-[#2b2b2b]/70 sm:text-base lg:text-lg">
+          <p className="animate-slip-up animation-delay-200 mt-3 max-sm:mt-1 text-[14px] md:text-[15px] lg:text-[16px] leading-6 text-[#2b2b2b]/70">
             A moving showcase of real client hair treatment results.
           </p>
         </div>

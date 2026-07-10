@@ -39,7 +39,7 @@ export default function MobileActionBar() {
           flex-1 flex items-center justify-center gap-2
           py-4 font-semibold text-white
           bg-[#354f9f]
-          text-sm
+          text-[14px] lg:text-[16px]
           active:scale-95 transition
         "
       >
@@ -55,7 +55,7 @@ export default function MobileActionBar() {
           py-4 font-semibold
           text-black
           bg-white
-          text-sm
+          text-[14px] lg:text-[16px]
           border-l border-gray-200
           active:scale-95 transition
         "
