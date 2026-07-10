@@ -88,31 +88,18 @@ export default function FaqSection() {
 
       <div className="relative mx-auto max-w-[1160px]">
         <div className="mx-auto max-w-[720px] text-center">
-          <span className="animate-slip-up inline-flex items-center gap-2 rounded-full border border-[#364b9b]/20 bg-[#364b9b]/[0.05] px-5 py-2 text-[13px] font-bold uppercase tracking-[0.18em] text-[#364b9b]">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#d92732]" />
-            FAQ
+          <span className="animate-slip-up inline-flex items-center gap-2 rounded-full px-5 py-2 text-[13px] font-bold uppercase tracking-[0.18em] text-[#364b9b]">
+            <span className="h-px w-6 bg-[#364b9b]" />
+              FAQ
+            <span className="h-px w-6 bg-[#d92732]" />
           </span>
-          <h2 className="animate-slip-up animation-delay-100 mt-6 max-sm:mt-3 text-[32px] font-extrabold leading-tight text-[#1a1f36] sm:text-[42px] lg:text-[50px]">
+          <h2 className="animate-slip-up animation-delay-100 mt-0 max-sm:mt-3 text-[32px] font-extrabold leading-tight text-[#1a1f36] sm:text-[42px] lg:text-[50px]">
             Frequently Asked{" "}
             <span className="relative inline-block">
               Questions
-              <svg
-                className="absolute -bottom-2 left-0 w-full"
-                height="10"
-                viewBox="0 0 220 10"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M2 7 C 60 2, 160 2, 218 7"
-                  stroke="#d92732"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  fill="none"
-                />
-              </svg>
             </span>
           </h2>
-          <p className="animate-slip-up animation-delay-100 mt-5 text-[15.5px] leading-7 text-[#5a6178]">
+          <p className="animate-slip-up animation-delay-100 mt-2 text-[15.5px] leading-7 text-[#5a6178]">
             Everything you need to know before starting your hair
             restoration journey with our specialists.
           </p>

@@ -86,31 +86,17 @@ export default function HairGrowthCta() {
 
       <div className="relative z-10 mx-auto grid max-w-[1120px] items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
         <div>
-          <span className="animate-slip-left inline-flex items-center gap-2 rounded-full border border-[#364b9b]/15 bg-[#364b9b]/[0.06] px-5 py-2 text-[13px] font-bold uppercase tracking-[0.18em] text-[#364b9b]">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#d92732]" />
-            Hair O Graft
+          <span className="animate-slip-left inline-flex items-center gap-2 rounded-full px-5 py-1 text-[13px] font-bold uppercase tracking-[0.18em] text-[#364b9b]">
+          <span className="h-px w-6 bg-[#364b9b]" />
+            Hair O Growth
+          <span className="h-px w-6 bg-[#d92732]" />
           </span>
 
-          <h1 className="animate-slip-left animation-delay-100 mt-6 max-sm:mt-3 max-w-[760px] text-[36px] font-extrabold leading-[1.14] tracking-[-0.01em] text-[#0b1233] sm:text-[48px] lg:text-[52px]">
+          <h1 className="animate-slip-left animation-delay-100 mt-3 max-sm:mt-3 max-w-[760px] text-[36px] font-extrabold leading-[1.14] tracking-[-0.01em] text-[#0b1233] sm:text-[48px] lg:text-[52px]">
             Stop Your Hair Loss.
-            <br />
             Start Your{" "}
-            <span className="relative inline-block text-[#d92732]">
+            <span className="relative inline-block ]">
               Hair Regrowth
-              <svg
-                className="absolute -bottom-2 left-0 w-full"
-                height="10"
-                viewBox="0 0 260 10"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M2 7 C 70 2, 190 2, 258 7"
-                  stroke="#d92732"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  fill="none"
-                />
-              </svg>
             </span>
             .
           </h1>
@@ -131,11 +117,11 @@ export default function HairGrowthCta() {
 
         <div className="animate-slip-right relative overflow-hidden rounded-[20px] border border-[#364b9b]/10 bg-[#f6f8ff] p-6 shadow-[0_28px_60px_-16px_rgb(20_41_86_/16%)] sm:p-8">
 
-          <p className="relative text-[12.5px] font-bold uppercase tracking-[0.16em] text-[#364b9b]/70">
+          {/* <p className="relative text-[12.5px] font-bold uppercase tracking-[0.16em] text-[#364b9b]/70">
             Why Choose Us
-          </p>
+          </p> */}
 
-          <div className="relative mt-5 grid gap-3.5">
+          <div className="relative mt-0 grid gap-3.5">
             {highlights.map((item, index) => {
               const accent = index % 2 === 0 ? "#364b9b" : "#d92732";
               return (

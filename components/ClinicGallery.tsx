@@ -159,13 +159,14 @@ export default function ClinicGallery() {
       </svg>
 
       <div className="relative z-10 mx-auto max-sm:mb-4 mb-8 max-w-4xl text-center sm:mb-10">
-        <span className="animate-slip-up mb-3 inline-flex items-center gap-2 rounded-full bg-[#364B9B]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#364B9B]">
-          <span className="h-2 w-2 rounded-full bg-[#D92732]" />
-          Treatment Section
+        <span className="animate-slip-up mb-0 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#364B9B]">
+          <span className="h-px w-6 bg-[#364b9b]" />
+            Treatment Section
+          <span className="h-px w-6 bg-[#d92732]" />
         </span>
-        <h2 className="animate-slip-up text-2xl font-extrabold leading-tight text-[#364B9B] sm:text-3xl lg:text-[44px]">
+        <h2 className="animate-slip-up text-2xl font-extrabold leading-tight text-black sm:text-3xl lg:text-[44px]">
           Advanced Hair Solutions for Hair Fall,{" "}
-          <span className="text-[#D92732]">Hair Loss &amp; Baldness.</span>
+Hair Loss Baldness.
         </h2>
         {/* <p className="animate-slip-up animation-delay-200 mx-auto max-sm:mt-1 mt-3 max-w-3xl text-sm leading-6 text-[#2b2b2b]/70 sm:text-base lg:text-lg">
           Whether you&apos;re experiencing hair fall, hair thinning, excessive

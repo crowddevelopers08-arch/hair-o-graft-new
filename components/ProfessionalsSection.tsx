@@ -83,8 +83,8 @@ export default function ProfessionalsSection() {
 
       {/* centered intro — one eyebrow, one headline, one accent bar, all on one axis */}
       <div className="relative z-10 mx-auto flex max-w-[1160px] flex-col items-center text-center">
-        <span className="animate-slip-up inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.28em] text-[#d92732]">
-          <span className="h-px w-6 bg-[#d92732]" />
+        <span className="animate-slip-up inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.28em] text-[#364B9B]">
+          <span className="h-px w-6 bg-[#364b9b]" />
           Doctor Section
           <span className="h-px w-6 bg-[#d92732]" />
         </span>
@@ -93,7 +93,6 @@ export default function ProfessionalsSection() {
           Meet Your Hair Specialist
         </h2>
 
-        <div className="animate-slip-up animation-delay-200 mt-5 h-[3px] w-16 rounded-full bg-gradient-to-r from-[#364b9b] to-[#d92732]" />
       </div>
 
       {/* framed detail card — text and imagery share one contained, symmetric composition */}
