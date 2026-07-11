@@ -5,27 +5,27 @@ import { useEffect, useRef, useState } from "react";
 
 const images = [
   {
-    src: "https://ik.imagekit.io/cbvg612cb/public/Before-After-2amba.jpg?updatedAt=1773379064179",
+    src: "/bfafs-1.png",
     alt: "Hair treatment client result 1",
   },
   {
-    src: "https://ik.imagekit.io/cbvg612cb/public/Before-After-6amba.jpg?updatedAt=1773379064239",
+    src: "/bfaf-2.png",
     alt: "Hair treatment client result 2",
   },
   {
-    src: "https://ik.imagekit.io/cbvg612cb/public/Before-After-5amba.jpg?updatedAt=1773379064215",
+    src: "/bfaf-3.png",
     alt: "Hair treatment client result 3",
   },
   {
-    src: "https://ik.imagekit.io/cbvg612cb/public/Before-After-3amba.jpg?updatedAt=1773379064188",
+    src: "/bfaf-4.png",
     alt: "Hair treatment client result 4",
   },
   {
-    src: "https://ik.imagekit.io/cbvg612cb/public/Before-After-4amba.jpg?updatedAt=1773379064096",
+    src: "/bfaf-5.png",
     alt: "Hair treatment client result 5",
   },
   {
-    src: "https://ik.imagekit.io/cbvg612cb/public/Before-After-2amba-Copy.jpg?updatedAt=1773379064193",
+    src: "/bfaf-6.png",
     alt: "Hair treatment client result 6",
   },
 ];
@@ -152,7 +152,7 @@ export default function BeforeAfter() {
                   }`}
                 >
                   <div className="group relative mx-auto overflow-hidden rounded-xl border border-[#364B9B]/20 bg-white shadow-[0_18px_45px_-14px_rgb(20_41_86_/_38%)] transition-shadow duration-300 hover:shadow-[0_24px_55px_-16px_rgb(217_39_50_/_28%)]">
-                    <div className="relative aspect-[4/3] w-full">
+                    <div className="relative aspect-[4/4] w-full">
                       <Image
                         src={image.src}
                         alt={image.alt}

@@ -127,12 +127,14 @@ export default function AboutHealthcare() {
             <div className="relative flex-1 rounded-2xl border border-[#364B9B]/40 bg-[#0D1330] p-3">
               <CornerBrackets color="blue" />
               <div className="relative h-full min-h-[380px] overflow-hidden rounded-xl">
-                <Image
-                  src="/surgery_fue.png"
-                  alt="Smiling healthcare specialist"
-                  fill
-                  className="object-cover object-center"
-                  priority
+                <video
+                  src="/VID-2026.mp4"
+                  className="absolute inset-0 h-full w-full object-cover object-top"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  aria-label="Hair O Graft clinic and specialist showcase"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0B0F1E]/65 via-transparent to-transparent" />
               </div>

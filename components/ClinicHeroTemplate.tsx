@@ -169,10 +169,12 @@ const uspItems = [
 const concernOptions = ["Hair Fall", "Hair Regrowth", "Hair Loss", "Extreme Baldness"];
 
 const beforeAfterImages = [
-  "https://ik.imagekit.io/cbvg612cb/public/Before-After-3amba.jpg?updatedAt=1773379064188",
-  "https://ik.imagekit.io/cbvg612cb/public/Before-After-2amba.jpg?updatedAt=1773379064179",
-  "https://ik.imagekit.io/cbvg612cb/public/Before-After-6amba.jpg?updatedAt=1773379064239",
-  "https://ik.imagekit.io/cbvg612cb/public/Before-After-5amba.jpg?updatedAt=1773379064215",
+  "/bfafs-1.png",
+  "/bfaf-2.png",
+  "/bfaf-3.png",
+  "/bfaf-4.png",
+  "/bfaf-5.png",
+  "/bfaf-6.png",
 ];
 
 export default function ClinicHeroTemplate() {
@@ -370,23 +372,22 @@ export default function ClinicHeroTemplate() {
                   Treatment
                 </h1>
 
-                <div className="mt-6 inline-flex items-center gap-4 rounded-2xl bg-white/95 p-3 pr-5 shadow-xl sm:mt-7 sm:gap-5 sm:p-3.5 sm:pr-6">
-                  <div className="relative aspect-[4/4] w-36 shrink-0 overflow-hidden rounded-xl bg-[#e8ecfa] sm:w-40 lg:w-84">
-                    <div
-                      className="instant-print-image absolute inset-0"
-                      key={beforeAfterImages[beforeAfterIndex]}
-                    >
-                      <Image
-                        src={beforeAfterImages[beforeAfterIndex]}
-                        alt="Hair regrowth before and after result"
-                        fill
-                        className="object-cover"
-                        sizes="176px"
-                      />
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-black/10 via-transparent to-white/20" />
-                    </div>
+                <div className="mt-6 w-full max-w-[420px] overflow-hidden rounded-2xl bg-[#e8ecfa] shadow-xl sm:mt-7">
+                  <div
+                    className="instant-print-image relative aspect-[4/3] w-full"
+                    key={beforeAfterImages[beforeAfterIndex]}
+                  >
+                    <Image
+                      src={beforeAfterImages[beforeAfterIndex]}
+                      alt="Hair regrowth before and after result"
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 640px) 90vw, 420px"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-black/10 via-transparent to-white/20" />
                   </div>
-                  <div className="text-left">
+
+                  <div className="bg-white/95 px-4 py-2.5">
                     <p className="text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] font-extrabold uppercase tracking-[0.1em] text-[#354f9f]">
                       Before &amp; After
                     </p>

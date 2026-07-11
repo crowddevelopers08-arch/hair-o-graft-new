@@ -82,7 +82,7 @@ function VideoThumb({ className = "", imgHeightClass = "h-[190px] sm:h-[215px]" 
     >
       <div className={`relative ${imgHeightClass}`}>
         <Image
-          src="/surgery_fue.png"
+          src="/doctor.png"
           alt="Professional hair consultation video support"
           fill
           className="object-cover"
@@ -106,19 +106,20 @@ function DoctorImageCollage() {
         <div className="absolute inset-x-4 top-6 bottom-6 -z-10 rounded-[40px] bg-gradient-to-br from-[#364b9b]/[0.08] to-[#d92732]/[0.06]" />
 
         <div className="absolute left-0 top-0 bottom-0 w-full sm:w-[80%] overflow-hidden rounded-[34px] bg-[#f6f8ff] shadow-[0_20px_45px_rgb(11_18_51_/_12%)] ring-1 ring-[#0b1233]/[0.04] sm:rounded-[42px]">
-          <Image
-            src="/doctors.jpeg"
-            alt="Dr. E. Hema Shree hair specialist caring for patient"
-            fill
-            className="object-cover object-center"
-            sizes="(max-width: 640px) 100vw, 80vw"
-            priority
+          <video
+            src="/video-1_squished.mp4"
+            className="absolute inset-0 h-full w-full object-cover object-center"
+            autoPlay
+            loop
+            muted
+            playsInline
+            aria-label="Dr. E. Hema Shree hair specialist caring for patient"
           />
         </div>
 
         <VideoThumb
-          className="absolute right-0 top-0 w-[46%] min-w-[150px] sm:min-w-[170px]"
-          imgHeightClass="h-[140px] sm:h-[160px]"
+          className="absolute right-[-30px] bottom-[-70px] w-[46%] min-w-[150px] sm:min-w-[170px] sm:bottom-[-80px]"
+          imgHeightClass="h-[200px] sm:h-[160px]"
         />
       </div>
 
@@ -127,18 +128,19 @@ function DoctorImageCollage() {
         <div className="absolute -inset-6 -z-10 rounded-[64px]" />
 
         <div className="absolute left-0 top-0 bottom-0 w-[82%] overflow-hidden rounded-[52px] bg-[#f6f8ff] shadow-[0_28px_60px_rgb(11_18_51_/_14%)] ring-1 ring-[#0b1233]/[0.04]">
-          <Image
-            src="/doctors.jpeg"
-            alt="Dr. E. Hema Shree hair specialist caring for patient"
-            fill
-            className="object-cover"
-            sizes="(max-width: 1024px) 72vw, 520px"
-            priority
+          <video
+            src="/video-1_squished.mp4"
+            className="absolute inset-0 h-full w-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+            aria-label="Dr. E. Hema Shree hair specialist caring for patient"
           />
         </div>
 
         <VideoThumb
-          className="absolute right-0 top-[-50px] w-[50%] min-w-[260px]"
+          className="absolute right-0 bottom-[-50px] w-[50%] min-w-[260px]"
           imgHeightClass="h-[220px] sm:h-[260px]"
         />
       </div>
@@ -173,7 +175,7 @@ function DoctorHeader() {
 function ExpertiseGrid() {
   return (
     <div className={``}>
-      <span className="text-[12px] md:text-[13px] lg:text-[14px] font-extrabold uppercase tracking-[0.14em] text-[#364b9b]/70">
+      <span className="text-[12px] md:text-[11px] lg:text-[12px] font-extrabold uppercase tracking-[0.14em] text-[#364b9b]/70">
         Areas of Expertise
       </span>
       <div className="mt-4 grid gap-3 sm:grid-cols-2 sm:gap-x-4">
@@ -185,7 +187,7 @@ function ExpertiseGrid() {
             <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#364b9b] text-white">
               <CheckIcon />
             </div>
-            <h3 className="text-[16px] md:text-[18px] lg:text-[18px] xl:text-[18px] font-extrabold leading-tight text-[#0b1233]">
+            <h3 className="text-[12px] md:text-[14px] lg:text-[14px] xl:text-[14px] font-extrabold leading-tight text-[#0b1233]">
               {feature.title}
             </h3>
           </div>
@@ -202,7 +204,7 @@ function Testimonial() {
       <span className="mt-1 shrink-0 text-[#364b9b]/20">
         <QuoteIcon />
       </span>
-      <p className="text-[14px] md:text-[15px] lg:text-[16px] font-medium italic leading-7 text-[#2b3a55]">
+      <p className="text-[12px] md:text-[14px] lg:text-[14px] font-medium italic leading-7 text-[#2b3a55]">
         She believes every patient deserves a personalized treatment plan
         based on their unique hair condition and focuses on achieving
         natural-looking, long-lasting results.
@@ -225,13 +227,14 @@ export default function ProfessionalsSection() {
     >
       {/* Doctor photo set as an ambient background behind the section */}
       <div className="pointer-events-none absolute inset-0">
-        <Image
-          src="/doctors.jpeg"
-          alt=""
-          fill
+        <video
+          src="/video-1_squished.mp4"
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-[0.08]"
+          autoPlay
+          loop
+          muted
+          playsInline
           aria-hidden="true"
-          sizes="100vw"
-          className="object-cover object-center opacity-[0.08]"
         />
         <div className="absolute inset-0 bg-white/85" />
       </div>
@@ -311,7 +314,7 @@ export default function ProfessionalsSection() {
 
             {/* Image collage renders here on phones/tablets; it re-slots
                 into the right column below on lg+ via its own hidden/block classes */}
-            <div className="mt-4 max-sm:mt-6 lg:hidden lg:mt-0">
+            <div className="mt-2 mb-[70px] max-sm:mt-0 sm:mb-[80px] lg:hidden lg:mt-0 lg:mb-0">
               <DoctorImageCollage />
             </div>
 
