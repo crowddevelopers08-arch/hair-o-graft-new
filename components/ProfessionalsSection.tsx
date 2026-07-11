@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ConsultationCtaBar from "./ConsultationCtaBar";
 
 const features = [
   { title: "Hair Regrowth Treatment" },
@@ -342,6 +343,8 @@ export default function ProfessionalsSection() {
           </div>
         </div>
       </div>
+          <ConsultationCtaBar />
+      
     </section>
   );
 }

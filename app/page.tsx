@@ -1,3 +1,4 @@
+import ConsultationCtaBar from "@/components/ConsultationCtaBar";
 import AboutHealthcare from "../components/AboutHealthcare";
 import BeforeAfter from "../components/beforeafter";
 import ClinicGallery from "../components/ClinicGallery";

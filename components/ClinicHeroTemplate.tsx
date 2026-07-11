@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState, type FormEvent } from "react";
+import BeforeAfterResultCard from "./BeforeAfterResultCard";
 
 const navItems = [
   { label: "Home", href: "#home", hasChevron: true, active: true },
@@ -372,29 +373,8 @@ export default function ClinicHeroTemplate() {
                   Treatment
                 </h1>
 
-                <div className="mt-6 w-full max-w-[420px] overflow-hidden rounded-2xl bg-[#e8ecfa] shadow-xl sm:mt-7">
-                  <div
-                    className="instant-print-image relative aspect-[4/3] w-full"
-                    key={beforeAfterImages[beforeAfterIndex]}
-                  >
-                    <Image
-                      src={beforeAfterImages[beforeAfterIndex]}
-                      alt="Hair regrowth before and after result"
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 640px) 90vw, 420px"
-                    />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-black/10 via-transparent to-white/20" />
-                  </div>
-
-                  <div className="bg-white/95 px-4 py-2.5">
-                    <p className="text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] font-extrabold uppercase tracking-[0.1em] text-[#354f9f]">
-                      Before &amp; After
-                    </p>
-                    <p className="mt-1 text-[12px] md:text-[13px] lg:text-[14px] text-[#1c2437]/60">
-                      Real patient result, 90 days
-                    </p>
-                  </div>
+                <div className="mt-6 sm:mt-7">
+                  <BeforeAfterResultCard src={beforeAfterImages[beforeAfterIndex]} />
                 </div>
 
                 <div className="mt-6 flex flex-wrap items-center justify-center gap-3 sm:mt-8 lg:justify-start">
@@ -408,7 +388,7 @@ export default function ClinicHeroTemplate() {
                     </span>
                   ))}
                 </div>
-                <style jsx>{`
+                <style jsx global>{`
                   .instant-print-image {
                     transform-origin: top center;
                     animation:
