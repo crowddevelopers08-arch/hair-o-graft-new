@@ -169,19 +169,19 @@ export default function ClinicHeroTemplate() {
           src={tabletHeroBanner}
           alt="Hair O Graft 90 day hair regrowth treatment for tablet"
           priority
-          sizes="(min-width: 768px) and (max-width: 1023px) 100vw, 1px"
-          className="hidden h-auto w-full md:block lg:hidden"
+          sizes="(min-width: 768px) and (max-width: 1279px) 100vw, 1px"
+          className="hidden h-auto w-full md:block xl:hidden"
         />
 
         <Image
           src={heroBanner}
           alt="Hair O Graft 90 day hair regrowth treatment and free hair analysis"
           priority
-          sizes="(min-width: 1024px) 100vw, 1px"
-          className="hidden h-auto w-full lg:block"
+          sizes="(min-width: 1280px) 100vw, 1px"
+          className="hidden h-auto w-full xl:block"
         />
 
-        <div className="px-4 py-6 sm:px-6 md:absolute md:inset-y-4 md:right-4 md:flex md:w-[40%] md:max-w-[410px] md:items-center md:px-0 md:py-0 lg:inset-y-auto lg:right-10 lg:top-[45%] lg:block lg:w-[450px] lg:max-w-none lg:-translate-y-1/2 xl:right-10">
+        <div className="px-4 py-6 sm:px-6 md:absolute md:right-3 md:top-1 md:block md:w-[290px] md:px-0 md:py-0 xl:right-10 xl:top-[45%] xl:w-[450px] xl:-translate-y-1/2">
           <HairAnalysisForm />
         </div>
       </section>

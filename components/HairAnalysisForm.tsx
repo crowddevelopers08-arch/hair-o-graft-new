@@ -138,13 +138,13 @@ export default function HairAnalysisForm() {
   }
 
   return (
-    <div className="w-full rounded-[24px] border border-black/5 bg-white p-6 sm:p-5">
+    <div className="w-full rounded-[24px] border border-black/5 bg-white p-6 sm:p-5 md:py-2 xl:p-5">
       <div className="flex flex-col items-center text-center">
-        <span className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#354f9f] text-[#354f9f]">
+        <span className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#354f9f] text-[#354f9f] md:h-10 md:w-10 xl:h-14 xl:w-14">
           <ClipboardCheckIcon />
         </span>
 
-        <h2 className="mt-0 text-[18px] md:text-[20px] lg:text-[22px] xl:text-[24px] font-extrabold leading-tight text-[#1c2437]">
+        <h2 className="mt-0 text-[18px] font-extrabold leading-tight text-[#1c2437] xl:text-[24px]">
           Book Your
           <br />
           <span className="text-[#354f9f]">Free Hair Analysis</span>
@@ -161,7 +161,7 @@ export default function HairAnalysisForm() {
         </div>
       </div>
 
-      <form className="mt-3 flex flex-col gap-3" onSubmit={handleSubmit}>
+      <form className="mt-3 flex flex-col gap-3 md:mt-2 md:gap-2 xl:mt-3 xl:gap-3" onSubmit={handleSubmit}>
         <div className="relative">
           <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[#1c2437]/40">
             <UserIcon />
@@ -171,7 +171,7 @@ export default function HairAnalysisForm() {
             name="name"
             placeholder="Full Name"
             required
-            className="h-12 w-full rounded-xl border border-black/10 bg-[#f7f8fb] pl-11 pr-4 text-[14px] md:text-[15px] lg:text-[16px] text-[#1c2437] placeholder:text-[#1c2437]/40 transition-colors focus:border-[#354f9f] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#354f9f]/20"
+            className="h-12 w-full rounded-xl border border-black/10 bg-[#f7f8fb] pl-11 pr-4 text-[14px] text-[#1c2437] placeholder:text-[#1c2437]/40 transition-colors focus:border-[#354f9f] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#354f9f]/20 md:h-10 xl:h-12 xl:text-[16px]"
           />
         </div>
 
@@ -184,7 +184,7 @@ export default function HairAnalysisForm() {
             name="phone"
             placeholder="Phone Number"
             required
-            className="h-12 w-full rounded-xl border border-black/10 bg-[#f7f8fb] pl-11 pr-4 text-[14px] md:text-[15px] lg:text-[16px] text-[#1c2437] placeholder:text-[#1c2437]/40 transition-colors focus:border-[#354f9f] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#354f9f]/20"
+            className="h-12 w-full rounded-xl border border-black/10 bg-[#f7f8fb] pl-11 pr-4 text-[14px] text-[#1c2437] placeholder:text-[#1c2437]/40 transition-colors focus:border-[#354f9f] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#354f9f]/20 md:h-10 xl:h-12 xl:text-[16px]"
           />
         </div>
 
@@ -197,7 +197,7 @@ export default function HairAnalysisForm() {
             name="city"
             placeholder="City"
             required
-            className="h-12 w-full rounded-xl border border-black/10 bg-[#f7f8fb] pl-11 pr-4 text-[14px] md:text-[15px] lg:text-[16px] text-[#1c2437] placeholder:text-[#1c2437]/40 transition-colors focus:border-[#354f9f] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#354f9f]/20"
+            className="h-12 w-full rounded-xl border border-black/10 bg-[#f7f8fb] pl-11 pr-4 text-[14px] text-[#1c2437] placeholder:text-[#1c2437]/40 transition-colors focus:border-[#354f9f] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#354f9f]/20 md:h-10 xl:h-12 xl:text-[16px]"
           />
         </div>
 
@@ -209,7 +209,7 @@ export default function HairAnalysisForm() {
             name="concern"
             required
             defaultValue=""
-            className="h-12 w-full appearance-none rounded-xl border border-black/10 bg-[#f7f8fb] pl-11 pr-10 text-[14px] md:text-[15px] lg:text-[16px] text-[#1c2437] transition-colors focus:border-[#354f9f] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#354f9f]/20"
+            className="h-12 w-full appearance-none rounded-xl border border-black/10 bg-[#f7f8fb] pl-11 pr-10 text-[14px] text-[#1c2437] transition-colors focus:border-[#354f9f] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#354f9f]/20 md:h-10 xl:h-12 xl:text-[16px]"
           >
             <option value="" disabled>
               Hair Concern
@@ -228,7 +228,7 @@ export default function HairAnalysisForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="mt-2 inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#354f9f] to-[#4a63b8] text-[14px] lg:text-[16px] font-extrabold uppercase tracking-wide text-white transition-transform hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0"
+          className="mt-2 inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#354f9f] to-[#4a63b8] text-[14px] font-extrabold uppercase tracking-wide text-white transition-transform hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0 md:mt-1 md:h-10 xl:mt-2 xl:h-12 xl:text-[16px]"
         >
           {isSubmitting ? "Sending..." : "Book Free Consultation"}
           <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#f5a623] text-[#0f1b3d]">
@@ -242,11 +242,11 @@ export default function HairAnalysisForm() {
           </p>
         )}
 
-        <div className="mt-1 flex items-center justify-center gap-x-3 gap-y-1.5">
+        <div className="mt-1 flex items-center justify-center gap-x-3 gap-y-1.5 md:hidden xl:flex xl:gap-x-3">
           {["No Spam", "Expert Consultation", "Quick Response"].map((label, index) => (
             <span key={label} className="inline-flex items-center gap-1.5">
               <TrustCheckIcon />
-              <span className="text-[12px] md:text-[13px] lg:text-[13px] font-medium text-[#1c2437]/70">
+              <span className="text-[12px] font-medium text-[#1c2437]/70 md:text-[11px] xl:text-[13px]">
                 {label}
               </span>
               {index < 2 && <span className="ml-1.5 h-1 w-1 rounded-full bg-[#1c2437]/30" />}
