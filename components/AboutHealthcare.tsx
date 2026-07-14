@@ -189,7 +189,13 @@ export default function AboutHealthcare() {
               <div className="mt-8 flex flex-col gap-6 border-t border-white/10 pt-7 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-center gap-4">
                   <div className="relative h-[52px] w-[52px] shrink-0 overflow-hidden rounded-full border-2 border-[#D92732] bg-[#f6d6cd]">
-                    <Image src="/doctors.jpeg" alt="Michael Jordan" fill className="object-cover" />
+                    <Image
+                      src="/doctors.jpeg"
+                      alt="Dr. E. Hema Shree"
+                      fill
+                      sizes="52px"
+                      className="object-cover"
+                    />
                   </div>
                   <div>
                     <p className="text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] font-extrabold leading-tight text-white">Dr. E. Hema Shree</p>
