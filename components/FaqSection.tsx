@@ -31,11 +31,6 @@ const faqs = [
     answer:
       "Many patients notice reduced hair fall within a few weeks, while visible hair growth typically becomes more noticeable over the following months. Individual results vary.",
   },
-  {
-    question: "Do you provide hair transplant services?",
-    answer:
-      "Yes. We offer advanced hair transplant procedures for suitable candidates after a detailed consultation.",
-  },
 ];
 
 function ToggleIcon() {
@@ -122,7 +117,11 @@ export default function FaqSection() {
         <div className="mt-14 max-sm:mt-8 grid gap-5 max-sm:gap-3 lg:grid-cols-2">
           {faqs.map((faq, index) => (
             <details
-              className="animate-slip-up group relative overflow-hidden rounded-2xl border border-[#364b9b]/10 bg-white p-6 shadow-[0_1px_2px_rgb(54_75_155_/6%)] transition-all duration-300 open:border-[#d92732]/20 open:shadow-[0_24px_48px_-16px_rgb(54_75_155_/20%)] max-sm:p-5"
+              className={`animate-slip-up group relative overflow-hidden rounded-2xl border border-[#364b9b]/10 bg-white p-6 shadow-[0_1px_2px_rgb(54_75_155_/6%)] transition-all duration-300 open:border-[#d92732]/20 open:shadow-[0_24px_48px_-16px_rgb(54_75_155_/20%)] max-sm:p-5 ${
+                index === faqs.length - 1
+                  ? "lg:col-span-2 lg:w-[calc(50%-0.625rem)] lg:justify-self-center"
+                  : ""
+              }`}
               style={{ animationDelay: `${180 + index * 90}ms` }}
               key={faq.question}
             >
